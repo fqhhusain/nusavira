@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { supabase } from './api/supabaseClient';
 import { playClick, playHit, playEpic, playLegendary, playBGM, stopBGM, toggleMute, getMuteStatus } from './utils/audio';
 import { fetchRandomArtifact, fetchCampaignBoss } from './api/rijksmuseum';
 import artifactsData from './data/artifacts.json';
@@ -25,6 +26,13 @@ function App() {
   const [discoveredArtifacts, setDiscoveredArtifacts] = useState(() => JSON.parse(localStorage.getItem(getKey('discovered_artifacts')) || '[]'));
   const PITY_LIMIT = 90;
   const PACK_COST = 100;
+  
+  // Supabase State
+  const [leaderboardData, setLeaderboardData] = useState([]);
+  const [loadingLeaderboard, setLoadingLeaderboard] = useState(false);
+  const [leaderboardName, setLeaderboardName] = useState(localStorage.getItem('gacha_player_name') || '');
+  const [syncCode, setSyncCode] = useState('');
+  const [syncing, setSyncing] = useState(false);
   
   const ELEMENT_ICONS = {
     'Natura': <img src="/icons/Natura.png" alt="Natura" style={{width: '20px', height: '20px', verticalAlign: 'middle', filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.8))'}} />,
@@ -1166,6 +1174,124 @@ function App() {
     });
   };
 
+  // --- SUPABASE LOGIC ---
+  const fetchLeaderboard = async () => {
+    setLoadingLeaderboard(true);
+    try {
+      const { data, error } = await supabase
+        .from('leaderboard')
+        .select('*')
+        .order('win_streak', { ascending: false })
+        .limit(10);
+      if (error) throw error;
+      setLeaderboardData(data || []);
+    } catch (err) {
+      console.error(err);
+      showToast("Failed to load leaderboard");
+    } finally {
+      setLoadingLeaderboard(false);
+    }
+  };
+
+  const submitScore = async () => {
+    if (!leaderboardName) return showToast("Please enter a display name!");
+    localStorage.setItem('gacha_player_name', leaderboardName);
+    try {
+      const { error } = await supabase
+        .from('leaderboard')
+        .upsert({ display_name: leaderboardName, win_streak: winStreak });
+      if (error) throw error;
+      showToast("Score Submitted to Global Leaderboard!");
+      fetchLeaderboard();
+    } catch (err) {
+      console.error(err);
+      showToast("Failed to submit score");
+    }
+  };
+
+  const handleCloudSave = async () => {
+    setSyncing(true);
+    try {
+      const keys = ['inventory', 'coins', 'deck', 'achievements', 'stars', 'stolen_artifacts', 'win_streak', 'pity_counter', 'player_level', 'player_exp', 'player_insight', 'unlocked_skills', 'discovered_artifacts', 'campaign_progress', 'streak', 'last_login'];
+      const saveData = {};
+      keys.forEach(k => saveData[k] = localStorage.getItem(getKey(k)));
+      
+      const { error } = await supabase
+        .from('cloud_saves')
+        .upsert({ sync_code: syncCode, save_data: saveData, updated_at: new Date() });
+      if (error) throw error;
+      showToast("Progress Saved to Cloud!");
+    } catch (err) {
+      console.error(err);
+      showToast("Failed to save to cloud");
+    } finally {
+      setSyncing(false);
+    }
+  };
+
+  const handleCloudLoad = async () => {
+    setSyncing(true);
+    try {
+      const { data, error } = await supabase
+        .from('cloud_saves')
+        .select('save_data')
+        .eq('sync_code', syncCode)
+        .single();
+      if (error) throw error;
+      if (data && data.save_data) {
+        Object.entries(data.save_data).forEach(([k, v]) => {
+          if (v) localStorage.setItem(getKey(k), v);
+        });
+        showToast("Cloud Save Loaded! Reloading...");
+        setTimeout(() => window.location.reload(), 1500);
+      } else {
+        showToast("No save found for this code.");
+      }
+    } catch (err) {
+      console.error(err);
+      showToast("Failed to load from cloud. Invalid code?");
+    } finally {
+      setSyncing(false);
+    }
+  };
+
+  const renderLeaderboard = () => (
+    <div className="view-container panel-impeccable" style={{minHeight: '60vh', marginTop: '20px', maxWidth: '600px', margin: '20px auto', background: 'rgba(0,0,0,0.8)'}}>
+       <header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px'}}>
+         <button className="btn-impeccable secondary" onClick={() => { playClick(); setView('grand_hall'); }}>Back</button>
+         <h2 style={{color: '#fbbf24', margin: 0}}><img src="/icons/trophy_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> GLOBAL ARENA CHAMPIONS</h2>
+       </header>
+
+       <div style={{display: 'flex', gap: '10px', marginBottom: '20px', background: 'rgba(255,255,255,0.05)', padding: '15px', border: '1px solid #333'}}>
+         <input 
+            type="text" 
+            placeholder="Your Display Name" 
+            value={leaderboardName} 
+            onChange={(e) => setLeaderboardName(e.target.value)}
+            style={{flex: 1, padding: '10px', background: '#000', color: '#fff', border: '1px solid var(--primary)', fontFamily: 'VT323', fontSize: '1.2rem'}}
+         />
+         <button className="btn-impeccable primary" onClick={submitScore}>Submit Score: {winStreak}</button>
+       </div>
+
+       {loadingLeaderboard ? (
+         <div style={{textAlign: 'center', padding: '40px'}}>Loading Champions...</div>
+       ) : (
+         <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+           {leaderboardData.map((row, idx) => (
+             <div key={idx} style={{display: 'flex', justifyContent: 'space-between', padding: '15px', background: idx === 0 ? 'rgba(251, 191, 36, 0.2)' : 'rgba(0,0,0,0.5)', border: `1px solid ${idx === 0 ? '#fbbf24' : '#333'}`, fontSize: '1.2rem'}}>
+               <div>
+                 <strong style={{color: idx === 0 ? '#fbbf24' : idx === 1 ? '#e4e4e7' : idx === 2 ? '#b45309' : '#fff', marginRight: '15px'}}>#{idx + 1}</strong>
+                 {row.display_name}
+               </div>
+               <div style={{color: 'var(--primary)', fontWeight: 'bold'}}>{row.win_streak} Streak</div>
+             </div>
+           ))}
+           {leaderboardData.length === 0 && <div style={{textAlign: 'center', color: 'var(--text-secondary)'}}>No champions yet. Be the first!</div>}
+         </div>
+       )}
+    </div>
+  );
+
   const renderGrandHall = () => (
     <div className="view-container home-battle-view">
       <main className="lobby-content" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '65vh', maxWidth: '450px', margin: '0 auto', textAlign: 'center', width: '100%'}}>
@@ -1224,6 +1350,10 @@ function App() {
                   <span><img src="/icons/blade_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> QUICK BATTLE
                </button>
              </div>
+             
+             <button className="btn-impeccable accent" onClick={() => { playClick(); setView('leaderboard'); fetchLeaderboard(); }} style={{width: '100%'}}>
+                <span><img src="/icons/trophy_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> GLOBAL LEADERBOARD
+             </button>
           </div>
         )}
       </main>
@@ -1689,7 +1819,7 @@ function App() {
         
         <div className="panel-impeccable" style={{marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: activeProfile === 'sandbox' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(0,0,0,0.5)', borderColor: activeProfile === 'sandbox' ? '#10b981' : '#d97706'}}>
           <div style={{textAlign: 'left'}}>
-            <h3 style={{margin: '0 0 5px 0', color: activeProfile === 'sandbox' ? '#10b981' : 'var(--primary)'}}>
+            <h3 style={{margin: '0 0 5px 0', color: activeProfile === 'sandbox' ? '#10b981' : 'var(--primary)'}>
               {activeProfile === 'sandbox' ? <span>{SandboxIcon} Sandbox Profile</span> : <span>{StarIcon} Main Profile</span>}
             </h3>
             <p style={{margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)'}}>
@@ -1750,6 +1880,29 @@ function App() {
           })}
         </div>
         
+        {/* Supabase Cloud Sync Section */}
+        <div className="panel-impeccable" style={{marginTop: '30px', padding: '20px', borderColor: '#3b82f6', background: 'rgba(59, 130, 246, 0.05)'}}>
+           <h3 style={{color: '#3b82f6', marginBottom: '10px'}}><img src="/icons/magic_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> Cloud Sync (Supabase)</h3>
+           <p style={{color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '15px'}}>Backup your progress to the cloud or load it on another device using a secret Sync Code.</p>
+           
+           <input 
+             type="text" 
+             placeholder="Enter your secret Sync Code" 
+             value={syncCode}
+             onChange={(e) => setSyncCode(e.target.value)}
+             style={{width: '100%', padding: '10px', background: '#000', color: '#fff', border: '2px solid #3b82f6', fontFamily: 'VT323', fontSize: '1.2rem', marginBottom: '15px', boxSizing: 'border-box'}}
+           />
+           
+           <div style={{display: 'flex', gap: '10px'}}>
+             <button className="btn-impeccable primary" onClick={handleCloudSave} disabled={syncing || !syncCode} style={{flex: 1}}>
+               {syncing ? 'Syncing...' : 'UPLOAD SAVE'}
+             </button>
+             <button className="btn-impeccable secondary" onClick={handleCloudLoad} disabled={syncing || !syncCode} style={{flex: 1}}>
+               {syncing ? 'Syncing...' : 'LOAD SAVE'}
+             </button>
+           </div>
+        </div>
+
         <div style={{marginTop: '40px', padding: '20px', border: '2px dashed #dc2626', textAlign: 'center', background: 'rgba(220, 38, 38, 0.05)'}}>
            <h3 style={{color: '#dc2626', marginBottom: '10px'}}>Danger Zone</h3>
            <p style={{color: 'var(--text-secondary)', marginBottom: '15px', fontSize: '0.9rem'}}>Wipe all local save data and start over from Level 1.</p>
@@ -2437,6 +2590,7 @@ function App() {
         {view === 'grand_hall' && renderGrandHall()}
         {view === 'excavation' && renderExcavation()}
         {view === 'encyclopedia' && renderEncyclopedia()}
+        {view === 'leaderboard' && renderLeaderboard()}
         {view === 'vault' && renderVault()}
         {view === 'skill_tree' && renderSkillTree()}
         {view === 'arena_combat' && renderArenaCombat()}
