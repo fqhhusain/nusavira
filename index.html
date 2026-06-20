@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icons/vault.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nusavira: Clash of Artifacts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="error-box" style="position:fixed; top:0; left:0; width:100%; background:red; color:white; z-index:9999; font-size:20px; white-space:pre-wrap;"></div>
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        const errorBox = document.getElementById('error-box');
+        errorBox.textContent += `Error: ${msg}\nLine: ${lineNo}\nURL: ${url}\nStack: ${error ? error.stack : ''}\n\n`;
+        return false;
+      };
+      window.addEventListener('unhandledrejection', function(event) {
+        const errorBox = document.getElementById('error-box');
+        errorBox.textContent += `Unhandled Promise Rejection: ${event.reason}\n\n`;
+      });
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
