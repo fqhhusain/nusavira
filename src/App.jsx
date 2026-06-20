@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { supabase } from './api/supabaseClient';
 import { playClick, playHit, playEpic, playLegendary, playBGM, stopBGM, toggleMute, getMuteStatus } from './utils/audio';
 import { fetchRandomArtifact, fetchCampaignBoss } from './api/rijksmuseum';
@@ -18,6 +18,14 @@ function App() {
   const [coins, setCoins] = useState(() => parseInt(localStorage.getItem(getKey('coins')) || '1000'));
   const [playerLevel, setPlayerLevel] = useState(() => parseInt(localStorage.getItem(getKey('player_level')) || '1'));
   const [playerExp, setPlayerExp] = useState(() => parseInt(localStorage.getItem(getKey('player_exp')) || '0'));
+  
+  // Auth State
+  const [session, setSession] = useState(null);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authEmail, setAuthEmail] = useState('');
+  const [authPassword, setAuthPassword] = useState('');
+  const [authIsLogin, setAuthIsLogin] = useState(true);
+  const [authLoading, setAuthLoading] = useState(false);
   const [levelUpRewards, setLevelUpRewards] = useState(null); // { newLevel, coins, card }
   const [playerInsight, setPlayerInsight] = useState(() => parseInt(localStorage.getItem(getKey('player_insight')) || '0'));
   const [unlockedSkills, setUnlockedSkills] = useState(() => JSON.parse(localStorage.getItem(getKey('unlocked_skills')) || '[]'));
@@ -33,6 +41,17 @@ function App() {
   const [leaderboardName, setLeaderboardName] = useState(localStorage.getItem('gacha_player_name') || '');
   const [syncCode, setSyncCode] = useState('');
   const [syncing, setSyncing] = useState(false);
+  
+  // Syndicate State
+  const [syndicateData, setSyndicateData] = useState(null);
+  const [syndicateMembers, setSyndicateMembers] = useState([]);
+  const [syndicateBoss, setSyndicateBoss] = useState(null);
+  const [syndicateInputCode, setSyndicateInputCode] = useState('');
+  const [syndicateNewName, setSyndicateNewName] = useState('');
+  const [loadingSyndicate, setLoadingSyndicate] = useState(false);
+  const [raidAttacksToday, setRaidAttacksToday] = useState(() => parseInt(localStorage.getItem('gacha_raid_attacks') || '0'));
+  const [raidLastReset, setRaidLastReset] = useState(() => localStorage.getItem('gacha_raid_reset') || '');
+
   
   const ELEMENT_ICONS = {
     'Natura': <img src="/icons/Natura.png" alt="Natura" style={{width: '20px', height: '20px', verticalAlign: 'middle', filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.8))'}} />,
@@ -67,6 +86,79 @@ function App() {
   const [isAudioMuted, setIsAudioMuted] = useState(true);
 
   // Switch BGM based on current view
+  // Add Supabase Auth Listener
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      if(session) fetchProfile(session.user.id, session.user.email);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      if(session) fetchProfile(session.user.id, session.user.email);
+    });
+    
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const fetchProfile = async (userId, email) => {
+    const { data } = await supabase.from('profiles').select('display_name').eq('id', userId).single();
+    if (data) {
+      setLeaderboardName(data.display_name);
+      localStorage.setItem('gacha_player_name', data.display_name);
+    } else if (email) {
+      const newName = email.split('@')[0] + Math.floor(Math.random() * 100);
+      const { error } = await supabase.from('profiles').insert({ id: userId, display_name: newName });
+      if (!error) {
+        setLeaderboardName(newName);
+        localStorage.setItem('gacha_player_name', newName);
+      }
+    }
+  };
+
+  const handleAuth = async () => {
+    if (!authEmail || !authPassword) return showToast("Enter email and password!");
+    if (!authIsLogin && !leaderboardName) return showToast("Enter a Player Alias to register!");
+    
+    setAuthLoading(true);
+    try {
+      if (authIsLogin) {
+        const { error } = await supabase.auth.signInWithPassword({ email: authEmail, password: authPassword });
+        if (error) throw error;
+        showToast("Logged In Successfully!");
+        setAuthModalOpen(false);
+      } else {
+        const { data, error } = await supabase.auth.signUp({ email: authEmail, password: authPassword });
+        if (error) throw error;
+        if (data.user) {
+           const { error: profileErr } = await supabase.from('profiles').insert({ id: data.user.id, display_name: leaderboardName });
+           if (profileErr) {
+              if (profileErr.message.includes('duplicate key') || profileErr.code === '23505') throw new Error("Alias already taken!");
+              throw profileErr;
+           }
+        }
+        
+        if (!data.session) {
+           showToast("Confirmation email sent! Please check your inbox.", "success");
+        } else {
+           showToast("Registered Successfully!", "success");
+           setAuthModalOpen(false);
+        }
+      }
+    } catch (err) {
+      showToast(err.message);
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setLeaderboardName('');
+    localStorage.removeItem('gacha_player_name');
+    showToast("Logged out");
+  };
+
   useEffect(() => {
     if (!isAudioMuted) {
       if (view === 'campaign' || view === 'battle') playBGM(2);
@@ -109,6 +201,18 @@ function App() {
   const [showGuide, setShowGuide] = useState(false);
   const [guideDialogue, setGuideDialogue] = useState("Welcome to the Museum! How can I assist you today?");
 
+  // Diminishing Returns Reset Logic
+  useEffect(() => {
+    const today = new Date().toLocaleDateString('en-CA');
+    if (raidLastReset !== today) {
+      setRaidAttacksToday(0);
+      setRaidLastReset(today);
+      localStorage.setItem('gacha_raid_attacks', '0');
+      localStorage.setItem('gacha_raid_reset', today);
+    }
+  }, [raidLastReset]);
+
+
   // Cheat Mode State
   const [cheatMode, setCheatMode] = useState(false);
   const [cheatRarity, setCheatRarity] = useState('Legendary');
@@ -136,7 +240,10 @@ function App() {
     playerDodge: false,
     enemyDodge: false,
     playerAttackDebuff: false,
-    enemyStunned: false
+    enemyStunned: false,
+    isCampaign: false,
+    campaignStage: null,
+    isRaid: false
   });
 
   const showToast = (message, type = 'error') => {
@@ -476,7 +583,10 @@ function App() {
         playerDodge: false,
         enemyDodge: false,
         playerAttackDebuff: false,
-        enemyStunned: false
+        enemyStunned: false,
+        isCampaign: false,
+        campaignStage: null,
+        isRaid: false
       });
       
       setView('arena_combat');
@@ -540,7 +650,8 @@ function App() {
         playerAttackDebuff: false,
         enemyStunned: false,
         isCampaign: true,
-        campaignStage: stageIndex
+        campaignStage: stageIndex,
+        isRaid: false
       });
       
       setView('arena_combat');
@@ -634,6 +745,10 @@ function App() {
     const newHp = Math.max(0, currentState.playerHp);
     
     if (newHp === 0) {
+      if (currentState.isRaid) {
+        handleRaidBattleEnd(currentState);
+        return { ...currentState, playerHp: 0, turn: 'gameover' };
+      }
       setWinStreak(0);
       currentState.log.push("You were defeated! Win Streak Reset!");
       
@@ -1194,14 +1309,20 @@ function App() {
   };
 
   const submitScore = async () => {
-    if (!leaderboardName) return showToast("Please enter a display name!");
-    localStorage.setItem('gacha_player_name', leaderboardName);
+    if (!session) return setAuthModalOpen(true);
+    
+    // Fallback if leaderboardName is still loading
+    const alias = leaderboardName || session.user.email.split('@')[0];
+    localStorage.setItem('gacha_player_name', alias);
+
     try {
-      const { error } = await supabase
-        .from('leaderboard')
-        .upsert({ display_name: leaderboardName, win_streak: winStreak });
+      const { error } = await supabase.from('leaderboard')
+        .upsert(
+          { display_name: alias, win_streak: winStreak, user_id: session.user.id },
+          { onConflict: 'user_id' }
+        );
       if (error) throw error;
-      showToast("Score Submitted to Global Leaderboard!");
+      showToast("Score Submitted to Global Leaderboard!", "success");
       fetchLeaderboard();
     } catch (err) {
       console.error(err);
@@ -1255,6 +1376,235 @@ function App() {
     }
   };
 
+  // --- SYNDICATE LOGIC ---
+  const fetchSyndicateLobby = async (synId) => {
+    setLoadingSyndicate(true);
+    try {
+      const { data: syn } = await supabase.from('syndicates').select('*').eq('id', synId).single();
+      const { data: members } = await supabase.from('syndicate_members').select('*').eq('syndicate_id', synId).order('total_damage', { ascending: false });
+      const { data: boss } = await supabase.from('syndicate_boss').select('*').eq('syndicate_id', synId).single();
+      setSyndicateData(syn);
+      setSyndicateMembers(members || []);
+      setSyndicateBoss(boss);
+      localStorage.setItem('gacha_syndicate_id', synId);
+    } catch (err) {
+      console.error(err);
+      showToast("Failed to fetch Syndicate data");
+    } finally {
+      setLoadingSyndicate(false);
+    }
+  };
+
+  const createSyndicate = async () => {
+    if (!leaderboardName) return showToast("Set a Display Name in the Leaderboard first!");
+    if (!syndicateNewName) return showToast("Enter a Syndicate Name");
+    setLoadingSyndicate(true);
+    try {
+      const joinCode = "SYN" + Math.floor(Math.random() * 100000);
+      const { data: syn, error: synErr } = await supabase.from('syndicates').insert({ name: syndicateNewName, join_code: joinCode }).select('id').single();
+      if (synErr) throw synErr;
+      
+      await supabase.from('syndicate_boss').insert({ syndicate_id: syn.id, hp: 5000000, max_hp: 5000000 });
+      await supabase.from('syndicate_members').insert({ syndicate_id: syn.id, player_name: leaderboardName, user_id: session.user.id });
+      
+      showToast("Syndicate Created!");
+      fetchSyndicateLobby(syn.id);
+    } catch (err) {
+      showToast(err.message);
+    } finally {
+      setLoadingSyndicate(false);
+    }
+  };
+
+  const joinSyndicate = async () => {
+    if (!leaderboardName) return showToast("Set a Display Name in the Leaderboard first!");
+    if (!syndicateInputCode) return showToast("Enter a Join Code");
+    setLoadingSyndicate(true);
+    try {
+      const { data: syn, error: synErr } = await supabase.from('syndicates').select('id').eq('join_code', syndicateInputCode).single();
+      if (synErr || !syn) throw new Error("Invalid Join Code");
+      
+      const { error: joinErr } = await supabase.from('syndicate_members').insert({ syndicate_id: syn.id, player_name: leaderboardName, user_id: session.user.id });
+      // Ignore unique constraint error if already joined
+      if (joinErr && !joinErr.message.includes('duplicate key')) throw joinErr;
+      
+      showToast("Joined Syndicate!");
+      fetchSyndicateLobby(syn.id);
+    } catch (err) {
+      showToast(err.message);
+    } finally {
+      setLoadingSyndicate(false);
+    }
+  };
+
+  const handleRaidBattleEnd = async (finalState) => {
+    let damageDealt = 999999 - finalState.enemyHp;
+    const multiplier = raidAttacksToday === 0 ? 1 : raidAttacksToday === 1 ? 0.5 : raidAttacksToday === 2 ? 0.25 : 0.05;
+    damageDealt = Math.floor(damageDealt * multiplier);
+    if (damageDealt < 0) damageDealt = 0;
+
+    const newAttacks = raidAttacksToday + 1;
+    setRaidAttacksToday(newAttacks);
+    localStorage.setItem('gacha_raid_attacks', newAttacks);
+
+    try {
+       const { data: latestBoss } = await supabase.from('syndicate_boss').select('*').eq('syndicate_id', syndicateData.id).single();
+       const newBossHp = Math.max(0, latestBoss.hp - damageDealt);
+       await supabase.from('syndicate_boss').update({ hp: newBossHp }).eq('syndicate_id', syndicateData.id);
+       
+       const { data: latestMember } = await supabase.from('syndicate_members').select('*').eq('syndicate_id', syndicateData.id).eq('user_id', session.user.id).single();
+       if (latestMember) {
+          const newTotalDmg = (latestMember.total_damage || 0) + damageDealt;
+          await supabase.from('syndicate_members').update({ total_damage: newTotalDmg }).eq('id', latestMember.id);
+       }
+       fetchSyndicateLobby(syndicateData.id);
+    } catch (err) {
+       console.error("Failed to update raid data", err);
+    }
+
+    setBattleResult({
+      status: 'lose',
+      stars: 0,
+      coins: 0,
+      message: `Raid Attempt Finished! You dealt ${damageDealt.toLocaleString()} damage to Overlord Ravana.`,
+      isCampaign: false,
+      campaignStageId: null
+    });
+  };
+
+  const startRaidBattle = () => {
+    playClick();
+    if (!syndicateBoss || syndicateBoss.hp <= 0) return showToast("Boss is already defeated!");
+    const playerCharIds = deck.character || [];
+    if (playerCharIds.length === 0) return showToast("Equip a Character card first!");
+    
+    const playerChar = inventory.find(c => c.id === playerCharIds[0]);
+    let hpBonus = (playerChar.stats['Cultural Impact'] || 0) + (playerChar.stats['Authenticity'] || 0);
+    let calculatedHp = 1000 + (hpBonus * 5); 
+    if (unlockedSkills.includes('warlord_1')) calculatedHp = Math.floor(calculatedHp * 1.1);
+
+    // Provide a super tough boss deck
+    const bossDeckData = [
+      { id: 'r1', title: 'Staff of Dasamuka', role: 'weapon', rarity: 'Legendary', imageUrl: '/staff_dasamuka.png', stats: { 'Lethality': 400, 'Cultural Impact': 80 } },
+      { id: 'r2', title: 'Obsidian Aegis', role: 'armor', rarity: 'Epic', imageUrl: '/obsidian_aegis.png', stats: { 'Damage Mitigation': 50, 'Authenticity': 50 } },
+      { id: 'r3', title: 'Cursed Sun Orb', role: 'weapon', rarity: 'Legendary', imageUrl: '/cursed_sun_orb.png', stats: { 'Lethality': 800, 'Cultural Impact': 120 } }
+    ];
+
+    setBattleState({
+      active: true,
+      playerHp: calculatedHp,
+      playerMaxHp: calculatedHp,
+      enemyHp: 999999, // Practically infinite for the battle duration
+      enemyMaxHp: 999999,
+      archetypeTitle: "Overlord Ravana",
+      enemyCharacter: {
+        title: "Overlord Ravana",
+        imageUrl: "/Overlord-Ravana.png"
+      },
+      turn: 'player',
+      log: [`🚨 Engaging Overlord Ravana! "Nyai Vex sent children to slay a god? I am Dasamuka! Bow before me!"`],
+      activeDefense: 0,
+      enemyDeck: bossDeckData,
+      isCampaign: false,
+      campaignStage: null,
+      isRaid: true
+    });
+    
+    setView('arena_combat');
+  };
+
+  const renderSyndicateIntro = () => {
+    return (
+      <div className="guide-overlay" style={{background: 'rgba(0,0,0,0.85)', zIndex: 2000}}>
+        <div className="guide-character" style={{left: 'auto', right: '5%', bottom: '5%', maxWidth: '500px', animation: 'fadeUp 0.5s forwards'}}>
+          <img src="/Nyai-Vex.png" alt="Nyai Vex" style={{filter: 'drop-shadow(0 0 20px #8b5cf6)'}} />
+        </div>
+        <div className="dialogue-box panel-impeccable" style={{background: 'rgba(26, 17, 15, 0.95)', borderColor: '#8b5cf6', width: '90%', maxWidth: '500px', margin: '0 auto', boxSizing: 'border-box'}}>
+          <div className="dialogue-name" style={{background: '#8b5cf6', color: '#fff', textShadow: '2px 2px 0 #000'}}>Nyai Vex</div>
+          <div className="dialogue-text" style={{fontSize: '1.4rem', color: '#fca5a5', textShadow: '1px 1px 0 #000', marginBottom: '20px'}}>
+             "Welcome to the real underground, darling. Overlord Ravana has monopolized my artifact trade with his god-complex. Go down there and bleed him dry. I’ll be watching from up here."
+          </div>
+          <div className="dialogue-options" style={{display: 'flex', gap: '10px', marginTop: '20px'}}>
+             <button className="btn-impeccable danger" onClick={() => { 
+                playClick(); 
+                if (!session) {
+                  setAuthModalOpen(true);
+                  return;
+                }
+                setView('syndicate_lobby'); 
+                const savedSynId = localStorage.getItem('gacha_syndicate_id'); 
+                if(savedSynId) fetchSyndicateLobby(savedSynId); 
+             }} style={{flex: 1, padding: '15px'}}>PROCEED</button>
+             <button className="btn-impeccable secondary" onClick={() => { playClick(); setView('grand_hall'); }} style={{padding: '15px', flex: 'unset'}}>RETREAT</button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderSyndicateLobby = () => {
+    return (
+      <div className="view-container panel-impeccable" style={{minHeight: '60vh', marginTop: '20px', maxWidth: '600px', margin: '20px auto', borderColor: '#8b5cf6', background: 'rgba(26, 17, 15, 0.95)'}}>
+          <header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px'}}>
+             <button className="btn-impeccable secondary" onClick={() => { playClick(); setView('grand_hall'); }}>Back</button>
+             <h2 style={{color: '#8b5cf6', margin: 0, textShadow: '2px 2px 0 #000'}}><img src="/icons/warning_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> THE BLACK MARKET</h2>
+          </header>
+
+          {!syndicateData ? (
+            <div style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+              <div style={{background: 'rgba(255,255,255,0.05)', padding: '20px', border: '2px solid #4ade80'}}>
+                 <h3 style={{color: '#4ade80', margin: '0 0 10px 0', textShadow: '1px 1px 0 #000'}}>Join a Syndicate</h3>
+                 <input type="text" placeholder="Enter Join Code (e.g. SYN12345)" value={syndicateInputCode} onChange={e => setSyndicateInputCode(e.target.value)} className="rpg-input" style={{borderColor: '#4ade80', marginBottom: '15px'}} />
+                 <button className="btn-impeccable primary" style={{width: '100%'}} onClick={joinSyndicate} disabled={loadingSyndicate}>{loadingSyndicate ? 'Loading...' : 'JOIN'}</button>
+              </div>
+              <div style={{background: 'rgba(255,255,255,0.05)', padding: '20px', border: '2px solid #fbbf24'}}>
+                 <h3 style={{color: '#fbbf24', margin: '0 0 10px 0', textShadow: '1px 1px 0 #000'}}>Found a Syndicate</h3>
+                 <input type="text" placeholder="Syndicate Name" value={syndicateNewName} onChange={e => setSyndicateNewName(e.target.value)} className="rpg-input" style={{borderColor: '#fbbf24', marginBottom: '15px'}} />
+                 <button className="btn-impeccable accent" style={{width: '100%'}} onClick={createSyndicate} disabled={loadingSyndicate}>{loadingSyndicate ? 'Loading...' : 'CREATE'}</button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div style={{textAlign: 'center', marginBottom: '20px', padding: '15px', background: 'rgba(0,0,0,0.6)', border: '2px solid #333'}}>
+                 <p style={{margin: '0 0 5px 0', color: 'var(--text-secondary)', fontSize: '1.1rem'}}>Join Code: <strong style={{color: '#fff', userSelect: 'all', fontSize: '1.3rem'}}>{syndicateData.join_code}</strong></p>
+              </div>
+
+              {syndicateBoss && (
+                <div style={{background: 'rgba(220, 38, 38, 0.1)', border: '4px solid #dc2626', padding: '25px', textAlign: 'center', marginBottom: '30px', boxShadow: 'inset 0 0 20px rgba(220, 38, 38, 0.2)'}}>
+                  <h3 style={{color: '#ef4444', margin: '0 0 15px 0', fontSize: '1.8rem', textShadow: '2px 2px 0 #000'}}>OVERLORD RAVANA</h3>
+                  <div style={{width: '100%', height: '30px', background: '#1a1a1a', border: '2px solid #000', position: 'relative', overflow: 'hidden', marginBottom: '15px'}}>
+                     <div style={{position: 'absolute', top: 0, left: 0, bottom: 0, width: `${Math.max(0, (syndicateBoss.hp / syndicateBoss.max_hp) * 100)}%`, background: '#ef4444', transition: 'width 0.5s ease'}}></div>
+                     <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.1rem', textShadow: '1px 1px 0 #000', fontWeight: 'bold'}}>
+                       {syndicateBoss.hp.toLocaleString()} / {syndicateBoss.max_hp.toLocaleString()} HP
+                     </div>
+                  </div>
+                  
+                  <div style={{display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '20px', fontWeight: 'bold'}}>
+                    <span>Attacks Today: <strong style={{color: '#fff'}}>{raidAttacksToday}</strong></span>
+                    <span>Damage Multiplier: <strong style={{color: '#fbbf24'}}>{(raidAttacksToday === 0 ? 1 : raidAttacksToday === 1 ? 0.5 : raidAttacksToday === 2 ? 0.25 : 0.05) * 100}%</strong></span>
+                  </div>
+
+                  <button className="btn-impeccable danger" onClick={startRaidBattle} style={{width: '100%', padding: '20px', fontSize: '1.5rem'}} disabled={syndicateBoss.hp <= 0}>
+                     {syndicateBoss.hp <= 0 ? 'BOSS DEFEATED' : 'ENGAGE RAID'}
+                  </button>
+                </div>
+              )}
+
+              <h3 style={{borderBottom: '2px solid #333', paddingBottom: '10px', marginBottom: '15px', color: '#fbbf24'}}>Syndicate Members</h3>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '8px', maxHeight: '200px', overflowY: 'auto', paddingRight: '10px'}}>
+                {syndicateMembers.map((m, idx) => (
+                  <div key={m.id} style={{display: 'flex', justifyContent: 'space-between', padding: '12px', background: 'rgba(0,0,0,0.5)', border: '2px solid #333'}}>
+                    <span style={{fontSize: '1.1rem'}}><strong>{idx + 1}.</strong> {m.player_name}</span>
+                    <span style={{color: '#ef4444', fontWeight: 'bold', fontSize: '1.1rem'}}>{parseInt(m.total_damage).toLocaleString()} Dmg</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+      </div>
+    );
+  };
+
   const renderLeaderboard = () => (
     <div className="view-container panel-impeccable" style={{minHeight: '60vh', marginTop: '20px', maxWidth: '600px', margin: '20px auto', background: 'rgba(0,0,0,0.8)'}}>
        <header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px'}}>
@@ -1263,13 +1613,9 @@ function App() {
        </header>
 
        <div style={{display: 'flex', gap: '10px', marginBottom: '20px', background: 'rgba(255,255,255,0.05)', padding: '15px', border: '1px solid #333'}}>
-         <input 
-            type="text" 
-            placeholder="Your Display Name" 
-            value={leaderboardName} 
-            onChange={(e) => setLeaderboardName(e.target.value)}
-            style={{flex: 1, padding: '10px', background: '#000', color: '#fff', border: '1px solid var(--primary)', fontFamily: 'VT323', fontSize: '1.2rem'}}
-         />
+         <div style={{flex: 1, padding: '10px', background: '#000', color: '#fff', border: '1px solid var(--primary)', fontFamily: 'VT323', fontSize: '1.2rem', display: 'flex', alignItems: 'center'}}>
+           {leaderboardName || (session ? session.user.email.split('@')[0] : 'Log in to set Alias')}
+         </div>
          <button className="btn-impeccable primary" onClick={submitScore}>Submit Score: {winStreak}</button>
        </div>
 
@@ -1351,6 +1697,10 @@ function App() {
                </button>
              </div>
              
+             <button className="btn-impeccable danger" onClick={() => { playClick(); if(!session) setAuthModalOpen(true); else setView('syndicate_intro'); }} style={{width: '100%', borderColor: '#dc2626', color: '#ef4444'}}>
+                <span><img src="/icons/warning_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> SYNDICATE RAID
+             </button>
+
              <button className="btn-impeccable accent" onClick={() => { playClick(); setView('leaderboard'); fetchLeaderboard(); }} style={{width: '100%'}}>
                 <span><img src="/icons/trophy_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> GLOBAL LEADERBOARD
              </button>
@@ -1817,6 +2167,17 @@ function App() {
           <h2 style={{margin: 0, textShadow: '2px 2px 0 #000'}}>Curator Profile</h2>
         </header>
         
+        {session && (
+          <div className="panel-impeccable" style={{marginBottom: '20px', padding: '15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(139, 92, 246, 0.1)', borderColor: '#8b5cf6'}}>
+            <div style={{textAlign: 'left'}}>
+              <div style={{color: '#8b5cf6', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '5px'}}>Connected Account</div>
+              <div style={{fontSize: '1.2rem', fontWeight: 'bold'}}>{leaderboardName || session.user.email.split('@')[0]}</div>
+              <div style={{fontSize: '0.9rem', color: 'var(--text-muted)'}}>{session.user.email}</div>
+            </div>
+            <button className="btn-impeccable secondary" onClick={handleLogout} style={{padding: '8px 15px', borderColor: '#ef4444', color: '#ef4444'}}>LOGOUT</button>
+          </div>
+        )}
+        
         <div className="panel-impeccable" style={{marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: activeProfile === 'sandbox' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(0,0,0,0.5)', borderColor: activeProfile === 'sandbox' ? '#10b981' : '#d97706'}}>
           <div style={{textAlign: 'left'}}>
             <h3 style={{margin: '0 0 5px 0', color: activeProfile === 'sandbox' ? '#10b981' : 'var(--primary)'}}>
@@ -2117,9 +2478,11 @@ function App() {
       .map(id => inventory.find(c => c.id === id))
       .filter(Boolean);
 
-    const bgImage = battleState.isCampaign 
-      ? `url(/background/bg_${battleState.campaignStage}.png)` 
-      : "url('/background/bg_arena.png')";
+    const bgImage = battleState.isRaid 
+      ? "url('/background/bg_raid.png')"
+      : battleState.isCampaign 
+        ? `url(/background/bg_${battleState.campaignStage}.png)` 
+        : "url('/background/bg_arena.png')";
 
 
     return (
@@ -2498,6 +2861,62 @@ function App() {
     );
   };
 
+  const renderAuthModal = () => {
+    if (!authModalOpen) return null;
+    return (
+      <div className="auth-modal-overlay" style={{position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <div className="auth-modal-content panel-impeccable" style={{background: '#1a110f', padding: '30px', width: '90%', maxWidth: '400px', borderColor: '#8b5cf6', textAlign: 'center'}}>
+           <h2 style={{color: '#8b5cf6', margin: '0 0 20px 0', textShadow: '2px 2px 0 #000'}}>
+             {authIsLogin ? 'LOGIN REQUIRED' : 'REGISTER ALIAS'}
+           </h2>
+           <p style={{color: '#a78bfa', marginBottom: '20px', fontSize: '0.9rem'}}>
+             Join the network to access Leaderboards and The Black Market.
+           </p>
+
+           <div style={{display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '25px'}}>
+             {!authIsLogin && (
+               <input 
+                 type="text" 
+                 placeholder="Player Alias (e.g. dailycisea)" 
+                 value={leaderboardName} 
+                 onChange={e => setLeaderboardName(e.target.value)} 
+                 className="rpg-input" 
+                 style={{borderColor: '#8b5cf6', textAlign: 'center'}}
+               />
+             )}
+             <input 
+               type="email" 
+               placeholder="Email Address" 
+               value={authEmail} 
+               onChange={e => setAuthEmail(e.target.value)} 
+               className="rpg-input" 
+               style={{borderColor: '#8b5cf6', textAlign: 'center'}}
+             />
+             <input 
+               type="password" 
+               placeholder="Password" 
+               value={authPassword} 
+               onChange={e => setAuthPassword(e.target.value)} 
+               className="rpg-input" 
+               style={{borderColor: '#8b5cf6', textAlign: 'center'}}
+             />
+           </div>
+
+           <button className="btn-impeccable primary" style={{width: '100%', marginBottom: '15px'}} onClick={handleAuth} disabled={authLoading}>
+             {authLoading ? 'CONNECTING...' : (authIsLogin ? 'LOGIN' : 'REGISTER')}
+           </button>
+
+           <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '10px'}}>
+              <button className="btn-impeccable secondary" onClick={() => setAuthModalOpen(false)} style={{padding: '10px 15px'}}>CANCEL</button>
+              <button className="btn-impeccable" onClick={() => setAuthIsLogin(!authIsLogin)} style={{padding: '10px 15px', background: 'transparent', color: '#a78bfa', borderColor: 'transparent'}}>
+                 {authIsLogin ? 'Create Account' : 'Already registered?'}
+              </button>
+           </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderTabBar = () => {
     if (view === 'arena_combat') return null;
     return (
@@ -2590,6 +3009,8 @@ function App() {
         {view === 'grand_hall' && renderGrandHall()}
         {view === 'excavation' && renderExcavation()}
         {view === 'encyclopedia' && renderEncyclopedia()}
+        {view === 'syndicate_intro' && renderSyndicateIntro()}
+        {view === 'syndicate_lobby' && renderSyndicateLobby()}
         {view === 'leaderboard' && renderLeaderboard()}
         {view === 'vault' && renderVault()}
         {view === 'skill_tree' && renderSkillTree()}
@@ -2597,6 +3018,7 @@ function App() {
         {view === 'profile' && renderProfile()}
       </main>
       
+      {renderAuthModal()}
       {renderTabBar()}
     </div>
   );

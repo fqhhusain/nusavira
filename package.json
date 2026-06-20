@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.78.0",
-    "jimp": "^1.6.1",
+    "dotenv": "^17.4.2",
+    "jimp": "^0.16.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
