@@ -1619,9 +1619,14 @@ function App() {
           </div>
           <h3 style={{fontSize: '2rem', marginBottom: '10px', color: '#fff'}}>[Your Name]</h3>
           <p style={{fontSize: '1.2rem', marginBottom: '30px', color: '#d4d4d8'}}>Contact: [your_email@student.its.ac.id]</p>
-          <div style={{background: 'rgba(59, 130, 246, 0.2)', padding: '15px', border: '2px solid rgb(59, 130, 246)', borderRadius: '8px'}}>
+          <div style={{background: 'rgba(59, 130, 246, 0.2)', padding: '15px', border: '2px solid rgb(59, 130, 246)', borderRadius: '8px', marginBottom: '20px'}}>
              <p style={{margin: 0, fontWeight: 'bold', color: '#60a5fa', fontSize: '1.1rem'}}>Tugas Mata Kuliah Pengantar Pengembangan Game ITS</p>
           </div>
+          
+          <a href="https://ko-fi.com/[your_kofi_username]" target="_blank" rel="noopener noreferrer" style={{display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#FF5E5B', color: '#fff', padding: '10px 20px', borderRadius: '5px', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.2rem', boxShadow: '0 4px 6px rgba(0,0,0,0.3)'}}>
+             <img src="/icons/coin.png" alt="Ko-fi" style={{width: '1.2em', height: '1.2em', imageRendering: 'pixelated'}} /> 
+             Support Me on Ko-fi
+          </a>
        </div>
     </div>
   );
