@@ -161,8 +161,10 @@ function App() {
 
   useEffect(() => {
     if (!isAudioMuted) {
-      if (view === 'campaign' || view === 'battle') playBGM(2);
-      else playBGM(1);
+      if (view === 'battle') playBGM(2); // Track 2: Battle (Bleganjur)
+      else if (view === 'campaign_map' || view === 'campaign') playBGM(4); // Track 4: Story (Lingsir Wengi)
+      else if (view === 'syndicate_intro' || view === 'syndicate_lobby') playBGM(5); // Track 5: Syndicate (Yamko Rambe)
+      else playBGM(1); // Track 1: Lobby (Gundul Pacul)
     }
   }, [view, isAudioMuted]);
 
@@ -1605,6 +1607,25 @@ function App() {
     );
   };
 
+  const renderCredits = () => (
+    <div className="view-container panel-impeccable" style={{minHeight: '60vh', marginTop: '20px', maxWidth: '600px', margin: '20px auto', background: 'rgba(0,0,0,0.8)'}}>
+       <header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px'}}>
+         <button className="btn-impeccable secondary" onClick={() => { playClick(); setView('grand_hall'); }}>Back</button>
+         <h2 style={{color: '#fbbf24', margin: 0}}>CREDITS</h2>
+       </header>
+       <div style={{textAlign: 'center', padding: '20px'}}>
+          <div style={{width: '150px', height: '150px', background: '#333', border: '4px solid var(--primary)', margin: '0 auto 20px auto', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', overflow: 'hidden'}}>
+             <img src="https://via.placeholder.com/150" alt="Creator Photo" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+          </div>
+          <h3 style={{fontSize: '2rem', marginBottom: '10px', color: '#fff'}}>[Your Name]</h3>
+          <p style={{fontSize: '1.2rem', marginBottom: '30px', color: '#d4d4d8'}}>Contact: [your_email@student.its.ac.id]</p>
+          <div style={{background: 'rgba(59, 130, 246, 0.2)', padding: '15px', border: '2px solid rgb(59, 130, 246)', borderRadius: '8px'}}>
+             <p style={{margin: 0, fontWeight: 'bold', color: '#60a5fa', fontSize: '1.1rem'}}>Tugas Mata Kuliah Pengantar Pengembangan Game ITS</p>
+          </div>
+       </div>
+    </div>
+  );
+
   const renderLeaderboard = () => (
     <div className="view-container panel-impeccable" style={{minHeight: '60vh', marginTop: '20px', maxWidth: '600px', margin: '20px auto', background: 'rgba(0,0,0,0.8)'}}>
        <header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px'}}>
@@ -1688,22 +1709,33 @@ function App() {
                </div>
              </div>
 
-             <div style={{display: 'flex', gap: '10px', width: '100%'}}>
-               <button className="btn-impeccable primary" onClick={() => { playClick(); setView('campaign_map'); }} style={{flex: 1}}>
-                  <span>{MapIcon}</span> STORY CAMPAIGN
+             <div style={{display: 'flex', gap: '10px', width: '100%', marginBottom: '10px'}}>
+               <button className="btn-impeccable primary" onClick={() => { playClick(); setView('campaign_map'); }} style={{flex: 1, padding: '15px 5px', fontSize: '0.9rem'}}>
+                  <div style={{marginBottom: '5px', fontSize: '1.5rem'}}>{MapIcon}</div>
+                  STORY
                </button>
-               <button className="btn-impeccable secondary" onClick={startBattle} style={{flex: 1}}>
-                  <span><img src="/icons/blade_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> QUICK BATTLE
+               <button className="btn-impeccable secondary" onClick={startBattle} style={{flex: 1, padding: '15px 5px', fontSize: '0.9rem'}}>
+                  <div style={{marginBottom: '5px', fontSize: '1.5rem'}}><img src="/icons/blade_icon.png?v=2" style={{width: '1em', height: '1em', imageRendering: 'pixelated'}} /></div>
+                  BATTLE
                </button>
              </div>
              
-             <button className="btn-impeccable danger" onClick={() => { playClick(); if(!session) setAuthModalOpen(true); else setView('syndicate_intro'); }} style={{width: '100%', borderColor: '#dc2626', color: '#ef4444'}}>
-                <span><img src="/icons/warning_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> SYNDICATE RAID
-             </button>
-
-             <button className="btn-impeccable accent" onClick={() => { playClick(); setView('leaderboard'); fetchLeaderboard(); }} style={{width: '100%'}}>
-                <span><img src="/icons/trophy_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> GLOBAL LEADERBOARD
-             </button>
+             <div style={{display: 'flex', gap: '10px', width: '100%', marginBottom: '5px'}}>
+               <button className="btn-impeccable danger" onClick={() => { playClick(); if(!session) setAuthModalOpen(true); else setView('syndicate_intro'); }} style={{flex: 1, borderColor: '#dc2626', color: '#ef4444', padding: '15px 5px', fontSize: '0.9rem'}}>
+                  <div style={{marginBottom: '5px', fontSize: '1.5rem'}}><img src="/icons/warning_icon.png?v=2" style={{width: '1em', height: '1em', imageRendering: 'pixelated'}} /></div>
+                  SYNDICATE
+               </button>
+               <button className="btn-impeccable accent" onClick={() => { playClick(); setView('leaderboard'); fetchLeaderboard(); }} style={{flex: 1, padding: '15px 5px', fontSize: '0.9rem'}}>
+                  <div style={{marginBottom: '5px', fontSize: '1.5rem'}}><img src="/icons/trophy_icon.png?v=2" style={{width: '1em', height: '1em', imageRendering: 'pixelated'}} /></div>
+                  RANKING
+               </button>
+             </div>
+             
+             <div style={{textAlign: 'center', marginTop: '10px'}}>
+               <button onClick={() => { playClick(); setView('credits'); }} style={{background: 'transparent', border: 'none', color: '#a1a1aa', textDecoration: 'underline', fontSize: '0.8rem', cursor: 'pointer', fontFamily: 'VT323, monospace'}}>
+                  Credits (ITS Assignment)
+               </button>
+             </div>
           </div>
         )}
       </main>
@@ -3012,6 +3044,7 @@ function App() {
         {view === 'syndicate_intro' && renderSyndicateIntro()}
         {view === 'syndicate_lobby' && renderSyndicateLobby()}
         {view === 'leaderboard' && renderLeaderboard()}
+        {view === 'credits' && renderCredits()}
         {view === 'vault' && renderVault()}
         {view === 'skill_tree' && renderSkillTree()}
         {view === 'arena_combat' && renderArenaCombat()}
