@@ -36,6 +36,16 @@ function App() {
   const GiftIcon = <img src="/icons/Hadiah_harian.png" alt="Gift" style={{width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', display: 'inline-block'}} />;
   const StreakIcon = <img src="/icons/Win_Streak.png" alt="Streak" style={{width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', display: 'inline-block'}} />;
   const SettingsIcon = <img src="/icons/Settings.png" alt="Settings" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', display: 'inline-block'}} />;
+  const InsightIcon = <img src="/icons/insight.png" alt="Insight" style={{width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', display: 'inline-block', filter: 'drop-shadow(0 0 2px #d946ef)'}} />;
+  const MapIcon = <img src="/icons/map.png" alt="Map" style={{width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', display: 'inline-block'}} />;
+  const BookIcon = <img src="/icons/book.png" alt="Book" style={{width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', display: 'inline-block'}} />;
+  const ProfileIcon = <img src="/icons/profile.png" alt="Profile" style={{width: '1.5em', height: '1.5em', verticalAlign: 'middle', display: 'inline-block'}} />;
+  const SandboxIcon = <img src="/icons/sandbox.png" alt="Sandbox" style={{width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', display: 'inline-block'}} />;
+  const NuclearIcon = <img src="/icons/nuclear_icon.png?v=2" alt="Nuclear" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', display: 'inline-block', margin: '0 2px'}} />;
+  const LockIcon = <img src="/icons/lock_icon.png?v=2" alt="Lock" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', display: 'inline-block', margin: '0 2px'}} />;
+  const TrophyIcon = <img src="/icons/trophy_icon.png?v=2" alt="Trophy" style={{width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', display: 'inline-block', margin: '0 2px'}} />;
+  const StarIcon = <img src="/icons/star_icon.png?v=2" alt="Star" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', display: 'inline-block', margin: '0 2px'}} />;
+  const CalendarIcon = <img src="/icons/calendar_icon.png?v=2" alt="Calendar" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', display: 'inline-block', margin: '0 2px'}} />;
   
   const [pulling, setPulling] = useState(false);
   const [summonPhase, setSummonPhase] = useState(null);
@@ -296,7 +306,7 @@ function App() {
     
     if (newBadges.length > 0) {
       setAchievements(prev => ({ badges: [...prev.badges, ...newBadges] }));
-      newBadges.forEach(b => setTimeout(() => showToast(`🏆 BADGE UNLOCKED: ${b}!`, 'success'), 1000));
+      newBadges.forEach(b => setTimeout(() => showToast(<span>{TrophyIcon} BADGE UNLOCKED: {b}!</span>, 'success'), 1000));
     }
     
   }, [inventory, coins, deck, achievements, totalStars, stolenArtifacts, winStreak, pityCounter, playerLevel, playerExp, playerInsight, unlockedSkills, discoveredArtifacts, campaignProgress, loginStreak, lastLoginDate]);
@@ -726,7 +736,7 @@ function App() {
                      reward += 5000;
                      newState.log.push(`🎉 YOU DEFEATED THE FINAL BOSS! 'Master of History' unlocked!`);
                   } else {
-                     newState.log.push(`🗺️ NEW CAMPAIGN STAGE UNLOCKED!`);
+                     newState.log.push(<span>{MapIcon} NEW CAMPAIGN STAGE UNLOCKED!</span>);
                   }
                }
             }
@@ -740,7 +750,7 @@ function App() {
                if (recovered) {
                    const recoveredCard = inventory.find(c => c.id === recovered.cardId);
                    if (recoveredCard) {
-                       newState.log.push(`🌟 RECOVERY! You reclaimed your stolen ${recoveredCard.title}! (+50 🧠, +1000 Coins)`);
+                       newState.log.push(<span>🌟 RECOVERY! You reclaimed your stolen {recoveredCard.title}! (+50 {InsightIcon}, +1000 {CoinIcon})</span>);
                        setCoins(c => c + 1000);
                        setPlayerInsight(prev => prev + 50);
                    }
@@ -1189,9 +1199,9 @@ function App() {
                  <img src={getActiveRelic().imageUrl} alt={getActiveRelic().title} style={{width: '100px', height: '100px', objectFit: 'contain', background: '#000', border: '2px solid #1a1a1a', marginBottom: '10px', animation: 'floatBob 4s ease-in-out infinite'}} />
                  <h4 style={{margin: '0 0 5px 0', color: `var(--rarity-${getActiveRelic().rarity.toLowerCase()})`, textShadow: '1px 1px 0 #000'}}>{getActiveRelic().title}</h4>
                  <p style={{fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0}}>
-                   {getActiveRelic().element === 'Aura' && '✨ Pity Blessing: -10 Pity Limit'}
-                   {getActiveRelic().element === 'Metallum' && '⚔️ Bounty Hunter: +50% Arena Coins'}
-                   {getActiveRelic().element === 'Natura' && '🌿 Abundant Harvest: 2x Daily Coins'}
+                   {getActiveRelic().element === 'Aura' && <span><img src="/icons/magic_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> Pity Blessing: -10 Pity Limit</span>}
+                   {getActiveRelic().element === 'Metallum' && <span><img src="/icons/blade_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> Bounty Hunter: +50% Arena Coins</span>}
+                   {getActiveRelic().element === 'Natura' && <span><img src="/icons/heal_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> Abundant Harvest: 2x Daily Coins</span>}
                    {!['Aura', 'Metallum', 'Natura'].includes(getActiveRelic().element) && `Passive: ${getActiveRelic().stats['Coin Yield'] || 'Unknown'}`}
                  </p>
                </div>
@@ -1208,10 +1218,10 @@ function App() {
 
              <div style={{display: 'flex', gap: '10px', width: '100%'}}>
                <button className="btn-impeccable primary" onClick={() => { playClick(); setView('campaign_map'); }} style={{flex: 1}}>
-                  <span>🗺️</span> STORY CAMPAIGN
+                  <span>{MapIcon}</span> STORY CAMPAIGN
                </button>
                <button className="btn-impeccable secondary" onClick={startBattle} style={{flex: 1}}>
-                  <span>⚔️</span> QUICK BATTLE
+                  <span><img src="/icons/blade_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /></span> QUICK BATTLE
                </button>
              </div>
           </div>
@@ -1223,14 +1233,14 @@ function App() {
   const renderExcavation = () => {
     return (
       <div className="view-container shop-view">
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
-           <h2 style={{margin: 0}}>Excavation Site</h2>
-           <button onClick={() => setCheatMode(!cheatMode)} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.5rem', opacity: cheatMode ? 1 : 0.5}} title="Toggle Sandbox Control Panel">🧪</button>
+        <div style={{position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px'}}>
+           <h2 style={{margin: 0, textAlign: 'center'}}>Excavation Site</h2>
+           <button onClick={() => setCheatMode(!cheatMode)} style={{position: 'absolute', right: 0, background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.5rem', opacity: cheatMode ? 1 : 0.5}} title="Toggle Sandbox Control Panel">{SandboxIcon}</button>
         </div>
 
         <div style={{marginBottom: '20px'}}>
            <button className="btn-impeccable accent" onClick={() => { playClick(); setEncyclopediaPage(0); setView('encyclopedia'); }} style={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px'}}>
-              <span style={{fontSize: '1.5rem'}}>📖</span> 
+              <span>{BookIcon}</span> 
               <div>
                 <div style={{fontWeight: 'bold', fontSize: '1.1rem'}}>Museum Encyclopedia</div>
                 <div style={{fontSize: '0.8rem', opacity: 0.8}}>{discoveredArtifacts.length} / {artifactsData.length} Discovered</div>
@@ -1239,28 +1249,28 @@ function App() {
         </div>
 
         {cheatMode && (
-          <div className="panel-impeccable" style={{marginBottom: '24px', borderColor: '#10b981', background: 'rgba(16, 185, 129, 0.05)'}}>
-             <h3 style={{color: '#10b981', marginBottom: '15px', textShadow: '2px 2px 0 #000'}}>🧪 Sandbox Control Panel</h3>
+          <div className="panel-impeccable" style={{marginBottom: '24px', borderColor: 'var(--primary)', background: 'var(--panel-bg)'}}>
+             <h3 style={{color: 'var(--primary)', marginBottom: '15px', textShadow: '2px 2px 0 #000'}}>{SandboxIcon} Sandbox Control Panel</h3>
              
              <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
-                <button className="btn-impeccable" style={{borderColor: '#fbbf24', color: '#fbbf24', flex: '1 1 45%'}} onClick={() => setCoins(c => c + 100000)}>+100k Coins</button>
-                <button className="btn-impeccable" style={{borderColor: '#a855f7', color: '#a855f7', flex: '1 1 45%'}} onClick={() => setPlayerInsight(p => p + 50000)}>+50k Insight</button>
-                <button className="btn-impeccable" style={{borderColor: '#3b82f6', color: '#3b82f6', flex: '1 1 45%'}} onClick={() => {
+                <button className="btn-impeccable accent" style={{flex: '1 1 45%'}} onClick={() => setCoins(c => c + 100000)}>+100k Coins</button>
+                <button className="btn-impeccable secondary" style={{flex: '1 1 45%'}} onClick={() => setPlayerInsight(p => p + 50000)}>+50k Insight</button>
+                <button className="btn-impeccable secondary" style={{flex: '1 1 45%'}} onClick={() => {
                    setPlayerLevel(100);
                    const allSkills = ['tycoon_1', 'tycoon_2', 'tycoon_3', 'insight_1', 'insight_2', 'insight_3'];
                    setUnlockedSkills(allSkills);
                    showToast("Max Level & Skills Unlocked!", "success");
                 }}>Max Lvl & Skills</button>
-                <button className="btn-impeccable" style={{borderColor: '#ef4444', color: '#ef4444', flex: '1 1 45%'}} onClick={() => {
+                <button className="btn-impeccable danger" style={{flex: '1 1 45%'}} onClick={() => {
                    setDiscoveredArtifacts(artifactsData.map(a => a.id));
                    showToast("Pokedex Fully Unlocked!", "success");
                 }}>Unlock Encyclopedia</button>
-                <button className="btn-impeccable" style={{borderColor: '#10b981', color: '#10b981', flex: '1 1 45%'}} onClick={() => {
+                <button className="btn-impeccable danger" style={{flex: '1 1 45%'}} onClick={() => {
                    setLoginStreak(15);
                    setLastLoginDate(null);
                    showToast("Time Travel: Streak set to Day 15!", "success");
                 }}>Time Travel (Day 15)</button>
-                <button className="btn-impeccable" style={{borderColor: '#f97316', color: '#f97316', flex: '1 1 45%'}} onClick={() => {
+                <button className="btn-impeccable danger" style={{flex: '1 1 45%'}} onClick={() => {
                    setCampaignProgress(4);
                    showToast("Campaign Warp to Final Boss!", "success");
                 }}>Warp to Final Boss</button>
@@ -1453,7 +1463,7 @@ function App() {
                       <div key={card.id} className={`mini-card rarity-${card.rarity.toLowerCase()}`} onClick={() => setSelectedVaultCard(card)}>
                         <div className="mini-card-img-wrapper">
                           <img src={card.imageUrl} alt={card.title} style={{opacity: isStolen ? 0.3 : 1, filter: isStolen ? 'grayscale(100%)' : 'none'}}/>
-                          {isStolen && <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'rgba(220,38,38,0.9)', color: '#fff', padding: '5px', fontWeight: 'bold', fontSize: '1rem', textAlign: 'center', width: '100%', border: '2px solid #000', zIndex: 5}}>🚨 STOLEN</div>}
+                          {isStolen && <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'rgba(220,38,38,0.9)', color: '#fff', padding: '5px', fontWeight: 'bold', fontSize: '1rem', textAlign: 'center', width: '100%', border: '2px solid #000', zIndex: 5}}><img src="/icons/warning_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> STOLEN</div>}
                           <div className="mini-rarity-badge">{card.rarity[0]}</div>
                           <div style={{position: 'absolute', top: '-10px', left: '-10px', fontSize: '1.2rem', background: 'rgba(0,0,0,0.8)', padding: '4px', border: '1px solid var(--surface-border)'}}>{ELEMENT_ICONS[card.element || 'Metallum']}</div>
                           {card.isCheated && (
@@ -1511,7 +1521,7 @@ function App() {
                <div style={{display: 'flex', gap: '10px', flexDirection: 'column'}}>
                   {isStolen ? (
                     <div style={{background: 'rgba(220,38,38,0.2)', padding: '15px', border: '2px solid #dc2626', textAlign: 'center', color: '#fca5a5'}}>
-                       <h4 style={{margin: '0 0 10px 0'}}>🚨 STOLEN BY SYNDICATE</h4>
+                       <h4 style={{margin: '0 0 10px 0'}}><img src="/icons/warning_icon.png?v=2" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated'}} /> STOLEN BY SYNDICATE</h4>
                        <p style={{margin: 0, fontSize: '0.9rem'}}>Defeat Boss in Campaign Stage {stageStolen} to retrieve this artifact!</p>
                     </div>
                   ) : (
@@ -1577,25 +1587,25 @@ function App() {
     {
       tier: 1, cost: 100,
       skills: [
-        { id: 'tycoon_1', title: 'The Tycoon I', desc: 'Diskon Pack Gacha 10%', icon: '💰' },
-        { id: 'warlord_1', title: 'The Warlord I', desc: 'HP seluruh deck meningkat 10%', icon: '⚔️' },
-        { id: 'scholar_1', title: 'The Scholar I', desc: 'Biaya Upgrade kartu diskon 50%', icon: '📜' }
+        { id: 'tycoon_1', title: 'The Tycoon I', desc: 'Diskon Pack Gacha 10%', icon: <img src="/icons/coin.png" alt="Tycoon" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> },
+        { id: 'warlord_1', title: 'The Warlord I', desc: 'HP seluruh deck meningkat 10%', icon: <img src="/icons/blade_icon.png?v=2" alt="Warlord" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> },
+        { id: 'scholar_1', title: 'The Scholar I', desc: 'Biaya Upgrade kartu diskon 50%', icon: <img src="/icons/book.png" alt="Scholar" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> }
       ]
     },
     {
       tier: 2, cost: 300,
       skills: [
-        { id: 'tycoon_2', title: 'The Tycoon II', desc: 'Hadiah Koin harian berlipat ganda', icon: '💰' },
-        { id: 'warlord_2', title: 'The Warlord II', desc: 'Peluang Critical Hit naik 10%', icon: '⚔️' },
-        { id: 'scholar_2', title: 'The Scholar II', desc: 'Dismantle menghasilkan +50% Insight', icon: '📜' }
+        { id: 'tycoon_2', title: 'The Tycoon II', desc: 'Hadiah Koin harian berlipat ganda', icon: <img src="/icons/coin.png" alt="Tycoon" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> },
+        { id: 'warlord_2', title: 'The Warlord II', desc: 'Peluang Critical Hit naik 10%', icon: <img src="/icons/blade_icon.png?v=2" alt="Warlord" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> },
+        { id: 'scholar_2', title: 'The Scholar II', desc: 'Dismantle menghasilkan +50% Insight', icon: <img src="/icons/book.png" alt="Scholar" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> }
       ]
     },
     {
       tier: 3, cost: 1000,
       skills: [
-        { id: 'tycoon_3', title: 'The Tycoon III', desc: 'Pity Limit turun menjadi 70', icon: '💰' },
-        { id: 'warlord_3', title: 'The Warlord III', desc: 'Curi artefak (50%) saat Bos mati', icon: '⚔️' },
-        { id: 'scholar_3', title: 'The Scholar III', desc: 'Stat Natura, Metallum, Aura +15%', icon: '📜' }
+        { id: 'tycoon_3', title: 'The Tycoon III', desc: 'Pity Limit turun menjadi 70', icon: <img src="/icons/coin.png" alt="Tycoon" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> },
+        { id: 'warlord_3', title: 'The Warlord III', desc: 'Curi artefak (50%) saat Bos mati', icon: <img src="/icons/blade_icon.png?v=2" alt="Warlord" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> },
+        { id: 'scholar_3', title: 'The Scholar III', desc: 'Stat Natura, Metallum, Aura +15%', icon: <img src="/icons/book.png" alt="Scholar" style={{width: '32px', height: '32px', imageRendering: 'pixelated'}} /> }
       ]
     }
   ];
@@ -1606,7 +1616,7 @@ function App() {
          <h1 style={{color: '#d946ef', margin: '0 0 10px 0'}}>Curator Research Tree</h1>
          <p style={{fontSize: '1.2rem', fontFamily: 'VT323'}}>Choose your specialization! You can only unlock ONE skill per tier.</p>
          <div style={{fontSize: '1.5rem', color: '#fff', background: '#000', padding: '10px', display: 'inline-block', border: '2px solid #d946ef'}}>
-           🧠 Insight: <strong style={{color: '#d946ef'}}>{playerInsight}</strong>
+           {InsightIcon} Insight: <strong style={{color: '#d946ef'}}>{playerInsight}</strong>
          </div>
        </header>
        
@@ -1615,7 +1625,7 @@ function App() {
            const tierUnlocked = tierData.skills.some(s => unlockedSkills.includes(s.id));
            return (
              <div key={`tier-${tIdx}`} className="panel-impeccable" style={{borderColor: tierUnlocked ? '#4ade80' : '#3f3f46'}}>
-               <h3 style={{textAlign: 'center', margin: '0 0 15px 0', borderBottom: '2px dashed #3f3f46', paddingBottom: '10px'}}>TIER {tierData.tier} (Cost: {tierData.cost} 🧠)</h3>
+               <h3 style={{textAlign: 'center', margin: '0 0 15px 0', borderBottom: '2px dashed #3f3f46', paddingBottom: '10px'}}>TIER {tierData.tier} (Cost: {tierData.cost} {InsightIcon})</h3>
                <div style={{display: 'flex', gap: '15px', flexWrap: 'wrap'}}>
                  {tierData.skills.map(skill => {
                    const isUnlocked = unlockedSkills.includes(skill.id);
@@ -1680,7 +1690,7 @@ function App() {
         <div className="panel-impeccable" style={{marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: activeProfile === 'sandbox' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(0,0,0,0.5)', borderColor: activeProfile === 'sandbox' ? '#10b981' : '#d97706'}}>
           <div style={{textAlign: 'left'}}>
             <h3 style={{margin: '0 0 5px 0', color: activeProfile === 'sandbox' ? '#10b981' : 'var(--primary)'}}>
-              {activeProfile === 'sandbox' ? '🧪 Sandbox Profile' : '⭐ Main Profile'}
+              {activeProfile === 'sandbox' ? <span>{SandboxIcon} Sandbox Profile</span> : <span>{StarIcon} Main Profile</span>}
             </h3>
             <p style={{margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)'}}>
               {activeProfile === 'sandbox' ? 'Testing environment. Safe space.' : 'Your actual game progress.'}
@@ -1699,7 +1709,7 @@ function App() {
         </div>
         
         <div className="panel-impeccable" style={{padding: '20px', textAlign: 'center', marginBottom: '20px', borderColor: 'var(--rarity-legendary)'}}>
-          <h1 style={{fontSize: '3rem', margin: '0', color: 'var(--primary)'}}>⭐ {totalStars}</h1>
+          <h1 style={{fontSize: '3rem', margin: '0', color: 'var(--primary)'}}>{StarIcon} {totalStars}</h1>
           <p style={{color: 'var(--text-secondary)'}}>Total Arena Stars Earned</p>
         </div>
         
@@ -1709,7 +1719,7 @@ function App() {
             <button className="btn-primary" style={{padding: '5px 10px', fontSize: '0.8rem'}} onClick={() => { playClick(); setShowDailyModal(true); }}>Open Daily</button>
           </h3>
           <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
-            <div style={{fontSize: '2.5rem'}}>📅</div>
+            <div style={{fontSize: '2.5rem'}}>{CalendarIcon}</div>
             <div>
               <p style={{margin: '0', fontSize: '1.2rem'}}>Current Streak: <strong style={{color: 'var(--primary)'}}>{loginStreak} Days</strong></p>
               <p style={{margin: '5px 0 0', color: 'var(--text-secondary)'}}>
@@ -1732,7 +1742,7 @@ function App() {
             const unlocked = achievements.badges.includes(badge.name);
             return (
               <div key={badge.name} className="glass" style={{padding: '20px', opacity: unlocked ? 1 : 0.4, border: unlocked ? '1px solid var(--primary)' : '1px solid var(--surface-border)', filter: unlocked ? 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.2))' : 'none', transition: 'all 0.3s'}}>
-                <h2 style={{fontSize: '2rem', marginBottom: '10px'}}>{unlocked ? '🏆' : '🔒'}</h2>
+                <h2 style={{fontSize: '2rem', marginBottom: '10px'}}>{unlocked ? TrophyIcon : LockIcon}</h2>
                 <h4 style={{color: unlocked ? 'var(--primary)' : 'var(--text-muted)', marginBottom: '5px'}}>{badge.name}</h4>
                 <p style={{fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0}}>{badge.desc}</p>
               </div>
@@ -1743,7 +1753,7 @@ function App() {
         <div style={{marginTop: '40px', padding: '20px', border: '2px dashed #dc2626', textAlign: 'center', background: 'rgba(220, 38, 38, 0.05)'}}>
            <h3 style={{color: '#dc2626', marginBottom: '10px'}}>Danger Zone</h3>
            <p style={{color: 'var(--text-secondary)', marginBottom: '15px', fontSize: '0.9rem'}}>Wipe all local save data and start over from Level 1.</p>
-           <button className="btn-impeccable danger" onClick={handleResetData} style={{margin: '0 auto'}}>☢️ WIPE SAVE DATA</button>
+           <button className="btn-impeccable danger" onClick={handleResetData} style={{margin: '0 auto'}}>{NuclearIcon} WIPE SAVE DATA</button>
         </div>
       </div>
     );
@@ -1854,7 +1864,7 @@ function App() {
     return (
       <div className="modal-overlay" style={{zIndex: 5000, background: 'rgba(0,0,0,0.9)'}}>
         <div className="modal-content panel-impeccable" style={{textAlign: 'center', borderColor: '#ef4444', animation: 'fadeUp 0.3s forwards', width: '90%', maxWidth: '400px', background: 'var(--surface-color)'}}>
-          <h2 style={{color: '#ef4444', margin: '0 0 15px 0'}}>☢️ SYSTEM WARNING</h2>
+          <h2 style={{color: '#ef4444', margin: '0 0 15px 0'}}>{NuclearIcon} SYSTEM WARNING</h2>
           <p style={{fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '20px'}}>
             Are you sure you want to WIPE all your save data? This will reset your progress, delete all artifacts, and cannot be undone!
           </p>
@@ -1878,7 +1888,7 @@ function App() {
         <div className="guide-character" style={{left: 'auto', right: '5%', bottom: '5%', maxWidth: '500px', animation: 'fadeUp 0.5s forwards'}}>
           <img src={loreData.image} alt={loreData.name} style={{filter: 'drop-shadow(0 0 20px #991b1b)'}} />
         </div>
-        <div className="dialogue-box panel-impeccable" style={{background: 'rgba(26, 17, 15, 0.95)', borderColor: '#ef4444', left: '5%', right: 'auto', width: '50%', minWidth: '350px'}}>
+        <div className="dialogue-box panel-impeccable" style={{background: 'rgba(26, 17, 15, 0.95)', borderColor: '#ef4444', width: '90%', maxWidth: '500px', margin: '0 auto', boxSizing: 'border-box'}}>
           <div className="dialogue-name" style={{background: '#ef4444', color: '#fff', textShadow: '2px 2px 0 #000'}}>{loreData.name}</div>
           <div className="dialogue-text" style={{fontSize: '1.4rem', color: '#fca5a5', textShadow: '1px 1px 0 #000', marginBottom: '20px'}}>
             {isLocked ? TAUNT_LORE[stageId] : loreData.text}
@@ -1934,9 +1944,9 @@ function App() {
                       onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
                  <span style={{display: 'none'}}>{isCompleted ? '⭐' : isUnlocked ? '⚔️' : '🔒'}</span>
                  
-                 {isCompleted && !hasStolenArtifact && <div style={{position: 'absolute', top: '-15px', right: '-15px', fontSize: '1.2rem'}}>⭐</div>}
-                 {hasStolenArtifact && <div style={{position: 'absolute', top: '-25px', left: '50%', transform: 'translateX(-50%)', fontSize: '2rem', animation: 'pulse 1s infinite', zIndex: 10, textShadow: '0 0 10px #dc2626'}}>🚨</div>}
-                 {!isUnlocked && <div style={{position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem'}}>🔒</div>}
+                 {isCompleted && !hasStolenArtifact && <div style={{position: 'absolute', top: '-15px', right: '-15px', fontSize: '1.2rem'}}>{StarIcon}</div>}
+                 {hasStolenArtifact && <div style={{position: 'absolute', top: '-25px', left: '50%', transform: 'translateX(-50%)', animation: 'pulse 1s infinite', zIndex: 10, filter: 'drop-shadow(0 0 10px #dc2626)'}}><img src="/icons/warning_icon.png?v=2" style={{width: '2rem', height: '2rem', imageRendering: 'pixelated'}} /></div>}
+                 {!isUnlocked && <div style={{position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem'}}>{LockIcon}</div>}
                </div>
                <div className="node-name panel-impeccable" style={{padding: '4px 8px', fontSize: '0.9rem', fontFamily: 'VT323', borderColor: hasStolenArtifact ? '#dc2626' : (isUnlocked ? 'var(--primary)' : '#1a1a1a')}}>{stage.name}</div>
              </div>
@@ -2005,15 +2015,22 @@ function App() {
                </div>
             )}
 
-            <div className="panel-impeccable" style={{width: '100%', maxWidth: '400px', textAlign: 'center', borderColor: battleResult.status === 'win' ? '#fbbf24' : '#ef4444', animation: 'fadeUp 0.5s forwards'}}>
-              <h1 style={{fontSize: '3rem', color: battleResult.status === 'win' ? '#fbbf24' : '#ef4444', margin: '0 0 20px 0', textShadow: '4px 4px 0 #000'}}>
+            <div className="panel-impeccable" style={{width: '100%', maxWidth: '400px', textAlign: 'center', borderColor: battleResult.status === 'win' ? '#fbbf24' : '#ef4444', animation: 'fadeUp 0.5s forwards', boxSizing: 'border-box', margin: '0 auto'}}>
+              <h1 style={{fontSize: 'clamp(2.2rem, 12vw, 3.5rem)', color: battleResult.status === 'win' ? '#fbbf24' : '#ef4444', margin: '0 0 20px 0', textShadow: '4px 4px 0 #000'}}>
                 {battleResult.status === 'win' ? 'VICTORY!' : 'DEFEAT'}
               </h1>
-              <p style={{fontSize: '1.2rem', fontFamily: 'VT323', marginBottom: '30px'}}>{battleResult.message}</p>
+              <p style={{fontSize: '1.2rem', fontFamily: 'VT323', marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px'}}>
+                 {battleResult.message.split('⭐').map((part, i, arr) => (
+                    <React.Fragment key={i}>
+                       {part}
+                       {i < arr.length - 1 && <img src="/icons/star_icon.png?v=2" alt="Star" style={{width: '1em', height: '1em', imageRendering: 'pixelated'}} />}
+                    </React.Fragment>
+                 ))}
+              </p>
               
               {battleResult.status === 'win' && (
                 <div style={{background: 'rgba(0,0,0,0.5)', padding: '20px', marginBottom: '30px', border: '2px solid #1a1a1a'}}>
-                  <div style={{fontSize: '2rem', marginBottom: '10px'}}>{'⭐'.repeat(battleResult.stars)}</div>
+                  <div style={{fontSize: '2rem', marginBottom: '10px'}}>{Array.from({length: battleResult.stars}).map((_, i) => <span key={i}>{StarIcon}</span>)}</div>
                   <div style={{fontSize: '1.5rem', color: '#fbbf24'}}>+{battleResult.coins} Coins</div>
                 </div>
               )}
@@ -2079,12 +2096,59 @@ function App() {
              </div>
            </div>
         </div>
-
-        <div className="battle-log panel-impeccable" style={{fontFamily: 'VT323', fontSize: '1.2rem'}}>
-           {battleState.log.slice(-4).map((msg, idx) => (
-             <div key={idx} className="log-entry" style={{animation: 'fadeUp 0.3s forwards'}}>{msg}</div>
-           ))}
-        </div>
+        {(() => {
+          const renderLogEntry = (msg, idx) => {
+            if (typeof msg !== 'string') return msg;
+            
+            let iconToRender = null;
+            let iconBgColor = 'rgba(0,0,0,0.5)';
+            let borderColor = 'var(--surface-border)';
+            let textMsg = msg;
+            
+            if (msg.includes('💥')) { iconToRender = <img src="/icons/damage_icon.png?v=2" alt="Hit" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('💥', ''); borderColor = '#ef4444'; iconBgColor = 'rgba(239, 68, 68, 0.2)'; }
+            else if (msg.includes('✨')) { iconToRender = <img src="/icons/magic_icon.png?v=2" alt="Magic" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('✨', ''); borderColor = '#a855f7'; iconBgColor = 'rgba(168, 85, 247, 0.2)'; }
+            else if (msg.includes('⚔️')) { iconToRender = <img src="/icons/blade_icon.png?v=2" alt="Crit" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('⚔️', ''); borderColor = '#fbbf24'; iconBgColor = 'rgba(251, 191, 36, 0.2)'; }
+            else if (msg.includes('🔥')) { iconToRender = <img src="/icons/flame_icon.png?v=2" alt="Burn" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('🔥', ''); borderColor = '#f97316'; iconBgColor = 'rgba(249, 115, 22, 0.2)'; }
+            else if (msg.includes('🗿')) { iconToRender = <img src="/icons/stun_icon.png?v=2" alt="Stun" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('🗿', ''); borderColor = '#9ca3af'; iconBgColor = 'rgba(156, 163, 175, 0.2)'; }
+            else if (msg.includes('🌿')) { iconToRender = <img src="/icons/heal_icon.png?v=2" alt="Heal" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('🌿', ''); borderColor = '#10b981'; iconBgColor = 'rgba(16, 185, 129, 0.2)'; }
+            else if (msg.includes('🌟')) { iconToRender = <img src="/icons/star_icon.png?v=2" alt="Recover" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('🌟', ''); borderColor = '#fcd34d'; iconBgColor = 'rgba(252, 211, 77, 0.2)'; }
+            else if (msg.includes('🚨')) { iconToRender = <img src="/icons/warning_icon.png?v=2" alt="Theft" style={{width: '28px', height: '28px', imageRendering: 'pixelated'}} />; textMsg = msg.replace('🚨', ''); borderColor = '#dc2626'; iconBgColor = 'rgba(220, 38, 38, 0.2)'; }
+            
+            // Colorize numbers
+            const parts = textMsg.split(/(\d+)/).map((textChunk, j) => {
+              if (!isNaN(textChunk) && textChunk.trim() !== '') {
+                return <span key={j} style={{color: '#fbbf24', fontWeight: 'bold'}}>{textChunk}</span>;
+              }
+              return textChunk;
+            });
+            
+            return (
+              <div key={idx} className="log-entry" style={{animation: 'fadeUp 0.3s forwards', marginBottom: '8px', display: 'flex', gap: '12px', alignItems: 'center'}}>
+                 {iconToRender ? (
+                    <div className="glass" style={{
+                       width: '40px', height: '40px', flexShrink: 0, 
+                       display: 'flex', justifyContent: 'center', alignItems: 'center', 
+                       background: iconBgColor, border: `1px solid ${borderColor}`, 
+                       borderRadius: '6px', boxShadow: 'inset 0 0 10px rgba(0,0,0,0.5)'
+                    }}>
+                       {iconToRender}
+                    </div>
+                 ) : (
+                    <div style={{width: '6px', height: '6px', background: 'var(--text-muted)', borderRadius: '50%', flexShrink: 0, marginLeft: '17px'}} />
+                 )}
+                 <div style={{flex: 1, lineHeight: '1.4'}}>
+                    {parts}
+                 </div>
+              </div>
+            );
+          };
+          
+          return (
+            <div className="battle-log panel-impeccable" style={{fontFamily: 'VT323', fontSize: '1.2rem', padding: '15px'}}>
+               {battleState.log.slice(-4).map((msg, idx) => renderLogEntry(msg, idx))}
+            </div>
+          );
+        })()}
 
         <div className="battle-hand panel-impeccable" style={{marginTop: '20px', borderColor: 'var(--primary)'}}>
            <h3 style={{color: 'var(--primary)', margin: '0 0 10px 0', textShadow: '1px 1px 0 #000'}}>Your Hand (Pick Action)</h3>
@@ -2298,7 +2362,7 @@ function App() {
           <span className="tab-text">The Vault</span>
         </div>
         <div className={`tab-item ${view === 'skill_tree' ? 'active' : ''}`} onClick={() => { playClick(); setView('skill_tree'); }}>
-          <div style={{fontSize: '32px'}}>🧠</div>
+          <div style={{fontSize: '32px'}}>{InsightIcon}</div>
           <span className="tab-text">Research</span>
         </div>
         <div className={`tab-item arena-action-btn ${view === 'arena_combat' ? 'active' : ''}`} onClick={() => {
@@ -2351,16 +2415,16 @@ function App() {
                  <span className="stat-value">{coins.toLocaleString()}</span>
                </div>
                <div className="stat-pill glass">
-                 <span className="stat-icon" style={{color: '#a78bfa'}}>🧠</span>
+                 <span className="stat-icon" style={{color: '#a78bfa'}}>{InsightIcon}</span>
                  <span className="stat-value">{playerInsight.toLocaleString()}</span>
                </div>
              </div>
 
              <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
                <button onClick={() => setIsAudioMuted(toggleMute())} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.5rem', filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.5))'}} title={isAudioMuted ? "Unmute Audio" : "Mute Audio"}>
-                 {isAudioMuted ? '🔇' : '🔊'}
+                 {isAudioMuted ? <img src="/icons/sound_off_icon.png?v=3" alt="Muted" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom'}} /> : <img src="/icons/sound_on_icon.png?v=3" alt="Audio On" style={{width: '1em', height: '1em', verticalAlign: 'text-bottom'}} />}
                </button>
-               <button onClick={() => { playClick(); setView('profile'); }} style={{background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', filter: 'drop-shadow(0 0 5px var(--primary))', padding: 0}} title="Curator Profile">👤</button>
+               <button onClick={() => { playClick(); setView('profile'); }} style={{background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', filter: 'drop-shadow(0 0 5px var(--primary))', padding: 0}} title="Curator Profile">{ProfileIcon}</button>
              </div>
           </header>
         </>

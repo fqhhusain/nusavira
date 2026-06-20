@@ -42,7 +42,7 @@ describe('App component (Museum UI)', () => {
 
   it('navigates to Curator Profile view when clicking the profile button', () => {
     render(<App />);
-    const profileBtn = screen.getByText(/Curator/i);
+    const profileBtn = screen.getByTitle('Curator Profile');
     fireEvent.click(profileBtn);
     expect(screen.getByText('Curator Profile', { selector: 'h2' })).toBeInTheDocument();
     expect(screen.getByText('Total Arena Stars Earned')).toBeInTheDocument();
@@ -56,17 +56,17 @@ describe('App component (Museum UI)', () => {
     fireEvent.click(excavationTab);
     
     // Cheat Mode should not be visible initially
-    expect(screen.queryByText(/Sandbox Control Panel \(Force Rarity\)/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Sandbox Control Panel/i)).not.toBeInTheDocument();
     
     // Find and click the gear icon button
     const gearBtn = screen.getByTitle('Toggle Sandbox Control Panel');
     fireEvent.click(gearBtn);
     
     // Now the cheat mode menu should be visible
-    expect(screen.getByText(/Sandbox Control Panel \(Force Rarity\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sandbox Control Panel/i)).toBeInTheDocument();
     
     // Verify the buttons exist
-    expect(screen.getByRole('button', { name: 'Common' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Legendary' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '+100k Coins' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '+50k Insight' })).toBeInTheDocument();
   });
 });
