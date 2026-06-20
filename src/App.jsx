@@ -1819,7 +1819,7 @@ function App() {
         
         <div className="panel-impeccable" style={{marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: activeProfile === 'sandbox' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(0,0,0,0.5)', borderColor: activeProfile === 'sandbox' ? '#10b981' : '#d97706'}}>
           <div style={{textAlign: 'left'}}>
-            <h3 style={{margin: '0 0 5px 0', color: activeProfile === 'sandbox' ? '#10b981' : 'var(--primary)'}>
+            <h3 style={{margin: '0 0 5px 0', color: activeProfile === 'sandbox' ? '#10b981' : 'var(--primary)'}}>
               {activeProfile === 'sandbox' ? <span>{SandboxIcon} Sandbox Profile</span> : <span>{StarIcon} Main Profile</span>}
             </h3>
             <p style={{margin: 0, fontSize: '0.8rem', color: 'var(--text-secondary)'}}>
