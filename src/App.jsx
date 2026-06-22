@@ -2533,7 +2533,10 @@ function App() {
           <img src="/aria.png" alt="Aria" />
         </div>
         <div className="dialogue-box panel-impeccable" onClick={(e) => e.stopPropagation()} style={{ background: 'rgba(26, 17, 15, 0.95)', borderColor: '#d97706' }}>
-          <div className="dialogue-name">Aria</div>
+          <div className="dialogue-name" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span>Aria</span>
+            <button onClick={() => { playClick(); setShowGuide(false); setGuideCategory(null); }} style={{ background: 'transparent', border: 'none', color: '#ef4444', fontSize: '1.2rem', padding: '0 5px', cursor: 'pointer' }}>✖</button>
+          </div>
           <div className="dialogue-text">{guideDialogue}</div>
           <div className="dialogue-options" style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             
@@ -2547,7 +2550,7 @@ function App() {
               </div>
             )}
 
-            <button className="accordion-btn" onClick={() => toggleCategory('combat')} style={{ background: guideCategory === 'combat' ? '#dc2626' : 'var(--surface-color)', color: guideCategory === 'combat' ? '#fff' : '#ef4444', border: '2px solid #dc2626', padding: '10px', textAlign: 'left', fontWeight: 'bold' }}>
+            <button className="accordion-btn" onClick={() => toggleCategory('combat')} style={{ background: guideCategory === 'combat' ? 'var(--primary)' : 'var(--surface-color)', color: guideCategory === 'combat' ? '#000' : 'var(--primary)', border: '2px solid var(--primary)', padding: '10px', textAlign: 'left', fontWeight: 'bold' }}>
               Combat System {guideCategory === 'combat' ? '[-]' : '[+]'}
             </button>
             {guideCategory === 'combat' && (
@@ -2557,7 +2560,7 @@ function App() {
               </div>
             )}
 
-            <button className="accordion-btn" onClick={() => toggleCategory('mechanics')} style={{ background: guideCategory === 'mechanics' ? '#8b5cf6' : 'var(--surface-color)', color: guideCategory === 'mechanics' ? '#fff' : '#a855f7', border: '2px solid #8b5cf6', padding: '10px', textAlign: 'left', fontWeight: 'bold' }}>
+            <button className="accordion-btn" onClick={() => toggleCategory('mechanics')} style={{ background: guideCategory === 'mechanics' ? 'var(--primary)' : 'var(--surface-color)', color: guideCategory === 'mechanics' ? '#000' : 'var(--primary)', border: '2px solid var(--primary)', padding: '10px', textAlign: 'left', fontWeight: 'bold' }}>
               Advanced Mechanics {guideCategory === 'mechanics' ? '[-]' : '[+]'}
             </button>
             {guideCategory === 'mechanics' && (
@@ -2566,8 +2569,6 @@ function App() {
                 <button onClick={() => { playClick(); setGuideDialogue("Cards have a Max Level of 30! If you pull a duplicate of a card that is already at Max Level, you will receive 5 Insight points instead!"); }}>What happens to duplicates?</button>
               </div>
             )}
-
-            <button onClick={() => { playClick(); setShowGuide(false); setGuideCategory(null); }} style={{ marginTop: '10px' }}>Close</button>
           </div>
         </div>
       </div>
