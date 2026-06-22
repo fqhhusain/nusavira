@@ -1755,9 +1755,9 @@ function App() {
           <p style={{ margin: '5px 0 0 0', color: '#fbbf24', fontSize: '1rem', textShadow: '1px 1px 0 #000' }}>Dosen: Imam Kuswardayan, S.Kom, M.T</p>
         </div>
 
-        <a href="https://ko-fi.com/[your_kofi_username]" target="_blank" rel="noopener noreferrer" className="btn-impeccable primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', width: 'auto', padding: '15px 30px' }}>
-          <img src="/icons/coin.png" alt="Ko-fi" style={{ width: '1.2em', height: '1.2em', imageRendering: 'pixelated' }} />
-          Support Me on Ko-fi
+        <a href="https://saweria.co/dailycisea" target="_blank" rel="noopener noreferrer" className="btn-impeccable primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', width: 'auto', padding: '15px 30px' }}>
+          <img src="/icons/coin.png" alt="Saweria" style={{ width: '1.2em', height: '1.2em', imageRendering: 'pixelated' }} />
+          Support Me on Saweria
         </a>
       </div>
     </div>
