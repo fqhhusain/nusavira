@@ -2,6 +2,8 @@
 
 **Nusavira** is a web-based, 16-bit retro Gacha RPG built with React (Vite) and Supabase. Players take on the role of a Curator, excavating legendary artifacts from Indonesian history and mythology, assembling decks, and battling corrupted historical archetypes in a turn-based combat system.
 
+**Genre:** Retro Gacha RPG, Turn-Based Strategy, Historical Fantasy
+
 ## Features
 
 * **Excavation (Gacha System):** Pull from banners using in-game currencies (Coins and Gems) to unlock beautifully crafted pixel-art characters (e.g., Gajah Mada, Ken Dedes) and artifacts (e.g., Keris, Batik).

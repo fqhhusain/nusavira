@@ -35,7 +35,7 @@ describe('App Online Features (Supabase)', () => {
     render(<App />);
     
     // 1. Open Leaderboard
-    const lbBtn = screen.getByText(/GLOBAL LEADERBOARD/i);
+    const lbBtn = screen.getByText(/RANKING/i);
     fireEvent.click(lbBtn);
     
     expect(screen.getByText('GLOBAL ARENA CHAMPIONS')).toBeInTheDocument();
@@ -50,17 +50,17 @@ describe('App Online Features (Supabase)', () => {
     fireEvent.click(submitBtn);
     
     // 4. The Auth Modal should block the action and appear
-    expect(await screen.findByText(/Login or Register/i)).toBeInTheDocument();
+    expect(await screen.findByText(/LOGIN REQUIRED/i)).toBeInTheDocument();
   });
 
   it('shows Auth Modal when attempting to access Syndicate Raid while logged out', async () => {
     render(<App />);
     
     // 1. Try to open the Syndicate menu
-    const raidBtn = screen.getByText(/SYNDICATE RAID/i);
+    const raidBtn = screen.getByRole('button', { name: /SYNDICATE/i });
     fireEvent.click(raidBtn);
     
     // 2. The Auth Modal should intercept the navigation
-    expect(await screen.findByText(/Login or Register/i)).toBeInTheDocument();
+    expect(await screen.findByText(/LOGIN REQUIRED/i)).toBeInTheDocument();
   });
 });

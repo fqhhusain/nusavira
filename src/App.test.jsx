@@ -11,21 +11,21 @@ describe('App component (Museum UI)', () => {
   it('renders the Grand Hall view initially', () => {
     render(<App />);
     expect(screen.getByText(/Quick Stats/i)).toBeInTheDocument();
-    expect(screen.getByText(/QUICK BATTLE/i)).toBeInTheDocument();
+    expect(screen.getByText(/ENTER ARENA/i)).toBeInTheDocument();
   });
 
   it('navigates to Excavation view when clicking the bottom tab', () => {
     render(<App />);
     const excavationTab = screen.getByText('Excavation');
     fireEvent.click(excavationTab);
-    expect(screen.getByText('Excavation Site')).toBeInTheDocument();
+    expect(screen.getByText(/Excavation Artifact Pack/i)).toBeInTheDocument();
   });
 
   it('navigates to The Vault view when clicking the bottom tab', () => {
     render(<App />);
     const vaultTab = screen.getByText('The Vault');
     fireEvent.click(vaultTab);
-    expect(screen.getByText(/Artifacts:/i)).toBeInTheDocument();
+    expect(screen.getByText(/Museum Encyclopedia/i)).toBeInTheDocument();
   });
 
   it('renders the Welcome Chest button when inventory is empty', () => {
