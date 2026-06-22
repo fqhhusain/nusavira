@@ -1750,6 +1750,7 @@ function App() {
         </div>
         <h3 style={{ fontSize: '1.6rem', marginBottom: '10px', color: '#fff' }}>Muhammad Faqih Husain</h3>
         <div style={{ fontSize: '1rem', marginBottom: '30px', color: '#d4d4d8', wordBreak: 'break-word', lineHeight: '1.6' }}>
+           NRP 5027231023<br /><br />
            Contact:<br />
            5027231023@student.its.ac.id<br />
            fqhhusain@gmail.com
