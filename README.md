@@ -61,8 +61,6 @@
 ## Roadmap / TODO
 
 - [ ] Publish the game on itch.io as an HTML5 web game.
-- [ ] Replace remaining placeholder emoticons with custom pixel art.
-- [ ] Refactor the monolithic `App.jsx` into smaller, manageable components.
 - [ ] Expand the campaign story with new dialogue events.
 
 ## Database Schema (Supabase)
