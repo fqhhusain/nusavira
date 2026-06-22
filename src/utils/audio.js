@@ -133,6 +133,8 @@ export const tracks = {
     }
 };
 
+let currentSpeed = 1;
+
 export const stopBGM = () => {
     bgmOscillators.forEach(osc => { try { osc.stop(); } catch(e){} });
     bgmOscillators = [];
@@ -142,9 +144,13 @@ export const stopBGM = () => {
     }
 };
 
-export const playBGM = (trackId) => {
+export const playBGM = (trackId, speedMultiplier = 1) => {
+    if (currentTrack === trackId && currentSpeed === speedMultiplier && bgmInterval) return;
+    
     stopBGM();
     currentTrack = trackId;
+    currentSpeed = speedMultiplier;
+    
     if (isMuted) return;
     initAudio();
     
@@ -154,32 +160,36 @@ export const playBGM = (trackId) => {
     const playStep = () => {
         if(isMuted) { stopBGM(); return; }
         const note = track.seq[step];
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = track.type;
-        osc.frequency.value = note.f;
+        const duration = note.d / speedMultiplier;
         
-        // Softer volume for BGM compared to SFX
-        gain.gain.setValueAtTime(0.02, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + note.d);
-        
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + note.d);
-        
-        bgmOscillators.push(osc);
-        
-        // Clean up memory
-        setTimeout(() => {
-            bgmOscillators = bgmOscillators.filter(o => o !== osc);
-        }, note.d * 1000);
+        if (note.f > 0) {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = track.type;
+            osc.frequency.value = note.f;
+            
+            // Softer volume for BGM compared to SFX
+            gain.gain.setValueAtTime(0.02, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+            
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + duration);
+            
+            bgmOscillators.push(osc);
+            
+            // Clean up memory
+            setTimeout(() => {
+                bgmOscillators = bgmOscillators.filter(o => o !== osc);
+            }, duration * 1000 + 100);
+        }
         
         step = (step + 1) % track.seq.length;
     };
     
     // Interval based on the duration of notes
-    const ms = track.seq[0].d * 1000;
+    const ms = (track.seq[0].d / speedMultiplier) * 1000;
     playStep();
     bgmInterval = setInterval(playStep, ms);
 };

@@ -159,14 +159,6 @@ function App() {
     showToast("Logged out");
   };
 
-  useEffect(() => {
-    if (!isAudioMuted) {
-      if (view === 'battle') playBGM(2); // Track 2: Battle (Bleganjur)
-      else if (view === 'campaign_map' || view === 'campaign') playBGM(4); // Track 4: Story (Lingsir Wengi)
-      else if (view === 'syndicate_intro' || view === 'syndicate_lobby') playBGM(5); // Track 5: Syndicate (Yamko Rambe)
-      else playBGM(1); // Track 1: Lobby (Gundul Pacul)
-    }
-  }, [view, isAudioMuted]);
 
   const [preBattleLore, setPreBattleLore] = useState(null); // Holds the stage ID for the lore overlay
   const [isAutoBattle, setIsAutoBattle] = useState(false);
@@ -247,6 +239,23 @@ function App() {
     campaignStage: null,
     isRaid: false
   });
+
+  useEffect(() => {
+    if (!isAudioMuted) {
+      if (view === 'arena_combat' || view === 'battle') {
+        let speed = 1;
+        if (battleState.active) {
+          const playerLow = battleState.playerHp <= (battleState.playerMaxHp * 0.3);
+          const enemyLow = battleState.enemyHp <= (battleState.enemyMaxHp * 0.3);
+          if (playerLow || enemyLow) speed = 1.5;
+        }
+        playBGM(2, speed); // Track 2: Battle (Bleganjur)
+      }
+      else if (view === 'campaign_map' || view === 'campaign') playBGM(4); // Track 4: Story (Lingsir Wengi)
+      else if (view === 'syndicate_intro' || view === 'syndicate_lobby') playBGM(5); // Track 5: Syndicate (Yamko Rambe)
+      else playBGM(1); // Track 1: Lobby (Gundul Pacul)
+    }
+  }, [view, isAudioMuted, battleState.playerHp, battleState.enemyHp, battleState.active]);
 
   const showToast = (message, type = 'error') => {
     setToast({ message, type });
