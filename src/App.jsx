@@ -1750,12 +1750,12 @@ function App() {
            5027231023@student.its.ac.id<br />
            fqhhusain@gmail.com
         </div>
-        <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '15px', border: '2px solid rgb(59, 130, 246)', borderRadius: '8px', marginBottom: '20px' }}>
-          <p style={{ margin: 0, fontWeight: 'bold', color: '#60a5fa', fontSize: '1.1rem' }}>Tugas Mata Kuliah Pengantar Pengembangan Game ITS</p>
-          <p style={{ margin: '5px 0 0 0', color: '#93c5fd', fontSize: '1rem' }}>Dosen: Imam Kuswardayan, S.Kom, M.T</p>
+        <div className="panel-impeccable" style={{ background: 'var(--surface-color)', padding: '15px', border: '2px solid var(--primary)', marginBottom: '20px', boxShadow: 'inset 0 0 10px rgba(0,0,0,0.8)' }}>
+          <p style={{ margin: 0, fontWeight: 'bold', color: 'var(--primary)', fontSize: '1.1rem', textShadow: '1px 1px 0 #000' }}>Tugas Mata Kuliah Pengantar Pengembangan Game ITS</p>
+          <p style={{ margin: '5px 0 0 0', color: '#fbbf24', fontSize: '1rem', textShadow: '1px 1px 0 #000' }}>Dosen: Imam Kuswardayan, S.Kom, M.T</p>
         </div>
 
-        <a href="https://ko-fi.com/[your_kofi_username]" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#FF5E5B', color: '#fff', padding: '10px 20px', borderRadius: '5px', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.2rem', boxShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
+        <a href="https://ko-fi.com/[your_kofi_username]" target="_blank" rel="noopener noreferrer" className="btn-impeccable primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', width: 'auto', padding: '15px 30px' }}>
           <img src="/icons/coin.png" alt="Ko-fi" style={{ width: '1.2em', height: '1.2em', imageRendering: 'pixelated' }} />
           Support Me on Ko-fi
         </a>
