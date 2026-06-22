@@ -1993,7 +1993,7 @@ function App() {
                       style={{ animation: `fadeUp 0.5s ${idx * 0.15}s forwards`, opacity: 0, textAlign: 'left' }}
                     >
                       <div className="mini-card-img-wrapper" style={{ height: '180px' }}>
-                        <img src={card.imageUrl} alt={card.title} />
+                        <img src={card.imageUrl} alt={card.title} loading="lazy" />
                       </div>
                       <div className="mini-card-details">
                         <h4 style={{ fontSize: '1rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginBottom: '4px' }}>{card.title}</h4>
@@ -2109,7 +2109,7 @@ function App() {
                     return (
                       <div key={card.id} className={`mini-card rarity-${card.rarity.toLowerCase()}`} onClick={() => setSelectedVaultCard(card)}>
                         <div className="mini-card-img-wrapper">
-                          <img src={card.imageUrl} alt={card.title} style={{ opacity: isStolen ? 0.3 : 1, filter: isStolen ? 'grayscale(100%)' : 'none' }} />
+                          <img src={card.imageUrl} alt={card.title} loading="lazy" style={{ opacity: isStolen ? 0.3 : 1, filter: isStolen ? 'grayscale(100%)' : 'none' }} />
                           {isStolen && <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'rgba(220,38,38,0.9)', color: '#fff', padding: '5px', fontWeight: 'bold', fontSize: '1rem', textAlign: 'center', width: '100%', border: '2px solid #000', zIndex: 5 }}><img src="/icons/warning_icon.png?v=2" style={{ width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated', mixBlendMode: 'multiply' }} /> STOLEN</div>}
                           <div className="mini-rarity-badge">{card.rarity[0]}</div>
                           <div style={{ position: 'absolute', top: '-10px', left: '-10px', fontSize: '1.2rem', background: 'rgba(0,0,0,0.8)', padding: '4px', border: '1px solid var(--surface-border)' }}>{ELEMENT_ICONS[card.element || 'Metallum']}</div>
@@ -2856,7 +2856,7 @@ function App() {
                 style={{ cursor: battleState.turn === 'player' ? 'pointer' : 'not-allowed', opacity: battleState.turn === 'player' ? 1 : 0.5 }}
               >
                 <div className="mini-card-img-wrapper" style={{ height: '80px' }}>
-                  <img src={card.imageUrl} alt={card.title} />
+                  <img src={card.imageUrl} alt={card.title} loading="lazy" />
                 </div>
                 <div className="mini-card-details" style={{ padding: '8px' }}>
                   <h4 style={{ fontSize: '0.8rem', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{card.title}</h4>
