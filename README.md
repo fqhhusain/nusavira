@@ -16,10 +16,13 @@
 * **The Black Market (Syndicates & Raids):** Form or join a Syndicate (Clan) and collaborate with other players to defeat massive Raid Bosses like Overlord Ravana.
 * **Research (Skill Tree):** Spend Skill Points to unlock permanent passive upgrades for your account.
 * **Guest-First Architecture:** Play immediately! Core gameplay data (inventory, coins, levels) is stored locally. An account is only required to participate in online features like Leaderboards and Syndicates.
+* **Progressive Web App (PWA):** Nusavira can be installed directly to your device for a native-like full-screen experience.
+* **Resilient Anti-Crash System:** A custom retro-themed Error Boundary ensures that even if a critical failure occurs, the game will gracefully catch it without losing your save data.
 
 ## Tech Stack
 
 * **Frontend:** React + Vite
+* **State Management:** Zustand (for highly responsive game state) + Local Storage
 * **Styling:** Custom CSS (16-bit retro aesthetics, CSS animations, glassmorphism)
 * **Backend as a Service:** Supabase (PostgreSQL, Authentication, Row Level Security)
 * **Deployment:** Local development via `npm run dev`, optimized for production via `npm run build`
@@ -68,3 +71,5 @@ All pixel-art assets, character portraits, and UI elements were generated to cap
 
 ---
 *Created with passion. Protect the history, build your legacy.*
+
+**Support the Creator:** [Saweria](https://saweria.co/dailycisea)
