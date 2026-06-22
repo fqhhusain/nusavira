@@ -48,7 +48,11 @@
    * Obtain your `Project URL` and `anon key` from the Supabase API Settings.
 
 4. **Environment Variables:**
-   Create a `.env` file in the root directory and add your Supabase credentials:
+   Copy `.env.example` to `.env.local` in the root directory and fill in your Supabase credentials:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Then edit `.env.local`:
    ```env
    VITE_SUPABASE_URL=your_supabase_project_url
    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -78,8 +82,4 @@ All pixel-art assets, character portraits, and UI elements were generated to cap
 ---
 *Created with passion. Protect the history, build your legacy.*
 
-**Credits:** 
-- Developer NRP: **5027231023**
-
-**Contact / Support:** 
-- [Saweria](https://saweria.co/dailycisea)
+**Support the Creator:** [Saweria](https://saweria.co/dailycisea)
