@@ -276,7 +276,8 @@ function App() {
         currentExp -= currentLevel * 100;
         currentLevel += 1;
         leveledUp = true;
-        totalCoinsBonus += currentLevel * 1000;
+        // Cap the level-up coin bonus to a maximum of 5000 to prevent economy breaking at high levels
+        totalCoinsBonus += 500 + Math.min(4500, currentLevel * 150);
       }
 
       if (leveledUp) {
@@ -286,7 +287,8 @@ function App() {
 
         setCoins(c => c + totalCoinsBonus);
         const randomCard = artifactsData[Math.floor(Math.random() * artifactsData.length)];
-        rewardedCard = { ...randomCard, id: Date.now().toString() + Math.random().toString(36).substr(2, 9), isNew: true };
+        // FIX: Retain the original card ID from artifactsData so duplicate stacking works!
+        rewardedCard = { ...randomCard, isNew: true };
 
         setInventory(prev => {
           const existingIndex = prev.findIndex(c => c.id === rewardedCard.id);
