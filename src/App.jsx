@@ -1125,6 +1125,7 @@ function App() {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const handlePull = async () => {
+    if (pulling) return;
     playClick();
     let currentCost = PACK_COST;
     if (unlockedSkills.includes('tycoon_1')) currentCost = Math.floor(currentCost * 0.9);
@@ -1362,7 +1363,7 @@ function App() {
       return;
     }
 
-    if (card.copies < 1) {
+    if (!card.copies || card.copies < 1) {
       showToast("You need at least 1 duplicate copy to upgrade this card!");
       return;
     }
@@ -1393,7 +1394,7 @@ function App() {
   const triggerDismantle = (cardId) => {
     playClick();
     const card = inventory.find(c => c.id === cardId);
-    if (!card || card.copies < 1) return;
+    if (!card || !card.copies || card.copies < 1) return;
 
     let insightGained = 0;
     if (card.rarity === 'Legendary') insightGained = 100;
