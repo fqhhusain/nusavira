@@ -2069,12 +2069,12 @@ function App() {
         <header className="panel-impeccable header" style={{ marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <div style={{ display: 'flex', gap: '8px', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 style={{ color: '#fbbf24', margin: 0, textShadow: '2px 2px 0 #000', fontSize: 'clamp(1.2rem, 5vw, 1.8rem)', whiteSpace: 'nowrap' }}>The Vault</h2>
-            <span style={{ fontFamily: 'VT323', fontSize: 'clamp(0.9rem, 3.5vw, 1.2rem)', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>📦 {visibleInventory.length}/{artifactsData.length}</span>
+            <span style={{ fontFamily: 'VT323', fontSize: 'clamp(0.9rem, 3.5vw, 1.2rem)', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}><img src="/icons/inventory_icon.png" alt="Inventory" style={{ width: '1em', height: '1em', verticalAlign: 'text-bottom', imageRendering: 'pixelated' }} /> {visibleInventory.length}/{artifactsData.length}</span>
           </div>
           <div style={{ display: 'flex', gap: '8px', width: '100%', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: 'VT323', fontSize: '1.1rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>⚡ Power: <strong style={{ color: '#fff' }}>{Object.values(totalStats).reduce((sum, val) => sum + (typeof val === 'number' ? val : 0), 0)}</strong></span>
+            <span style={{ fontFamily: 'VT323', fontSize: '1.1rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}><img src="/icons/power_icon.png" alt="Power" style={{ width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', imageRendering: 'pixelated' }} /> Power: <strong style={{ color: '#fff' }}>{Object.values(totalStats).reduce((sum, val) => sum + (typeof val === 'number' ? val : 0), 0)}</strong></span>
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-              <button className="btn-impeccable accent" onClick={handleRandomizeDeck} style={{ padding: '5px 10px', fontSize: '0.85rem', marginBottom: 0, whiteSpace: 'nowrap' }}>🎲 Random</button>
+              <button className="btn-impeccable accent" onClick={handleRandomizeDeck} style={{ padding: '5px 10px', fontSize: '0.85rem', marginBottom: 0, whiteSpace: 'nowrap' }}><img src="/icons/random_icon.png" alt="Random" style={{ width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', imageRendering: 'pixelated' }} /> Random</button>
               <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', background: 'rgba(0,0,0,0.8)', padding: '5px 8px', border: '2px solid #3e2723', whiteSpace: 'nowrap' }}>
                 <input type="checkbox" checked={showCheatSandbox} onChange={(e) => setShowCheatSandbox(e.target.checked)} />
                 <span style={{ fontFamily: 'VT323', fontSize: '1.1rem' }}>Dev</span>
@@ -2705,7 +2705,7 @@ function App() {
                 onClick={() => setBattleState(prev => ({ ...prev, playerHp: 99999, playerMaxHp: 99999, activePlayerCard: { ...prev.activePlayerCard, attack: 99999 } }))}
                 title="God Mode: Max HP & ATK"
               >
-                ⚡ GOD MODE
+                <img src="/icons/power_icon.png" alt="Power" style={{ width: '1.2em', height: '1.2em', verticalAlign: 'text-bottom', imageRendering: 'pixelated' }} /> GOD MODE
               </button>
             )}
             </div>
@@ -3171,7 +3171,7 @@ function App() {
       {renderAriaGuide()}
       {toast && (
         <div className={`toast-notification glass toast-${toast.type}`}>
-          <span className="toast-icon">⚠️</span>
+          <span className="toast-icon"><img src="/icons/warning_icon.png" alt="Warning" style={{ width: '1.2em', height: '1.2em', verticalAlign: 'middle', imageRendering: 'pixelated' }} /></span>
           <span className="toast-message">{toast.message}</span>
         </div>
       )}
