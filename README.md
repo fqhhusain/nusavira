@@ -58,6 +58,13 @@
    ```
    Open `http://localhost:5174` in your browser to play!
 
+## Roadmap / TODO
+
+- [ ] Publish the game on itch.io as an HTML5 web game.
+- [ ] Replace remaining placeholder emoticons with custom pixel art.
+- [ ] Refactor the monolithic `App.jsx` into smaller, manageable components.
+- [ ] Expand the campaign story with new dialogue events.
+
 ## Database Schema (Supabase)
 
 * **`profiles`**: Stores player aliases linked to their Authentication User ID.
