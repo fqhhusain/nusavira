@@ -23,10 +23,11 @@ const useGameStore = create((set, get) => ({
     return { coins: newCoins };
   }),
 
-  // Explicit setter for dev/cheats or specific overrides
-  setCoins: (amount) => set(() => {
-    localStorage.setItem(getKey('coins'), amount.toString());
-    return { coins: amount };
+  // Explicit setter for drop-in replacement of React useState
+  setCoins: (updaterOrValue) => set((state) => {
+    const newCoins = typeof updaterOrValue === 'function' ? updaterOrValue(state.coins) : updaterOrValue;
+    localStorage.setItem(getKey('coins'), newCoins.toString());
+    return { coins: newCoins };
   }),
   
   // Method to re-initialize if the user logs in/out and changes email

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { supabase } from './api/supabaseClient';
+import useGameStore from './store/gameStore';
 import { playClick, playHit, playEpic, playLegendary, playBGM, stopBGM, toggleMute, getMuteStatus } from './utils/audio';
 import { fetchRandomArtifact, fetchCampaignBoss } from './api/rijksmuseum';
 import artifactsData from './data/artifacts.json';
@@ -15,7 +16,7 @@ function App() {
   const [inventory, setInventory] = useState(() => JSON.parse(localStorage.getItem(getKey('inventory')) || '[]'));
   const [winStreak, setWinStreak] = useState(() => parseInt(localStorage.getItem(getKey('win_streak')) || '0'));
   const [summoningBoss, setSummoningBoss] = useState(false);
-  const [coins, setCoins] = useState(() => parseInt(localStorage.getItem(getKey('coins')) || '1000'));
+  const { coins, setCoins } = useGameStore();
   const [playerLevel, setPlayerLevel] = useState(() => parseInt(localStorage.getItem(getKey('player_level')) || '1'));
   const [playerExp, setPlayerExp] = useState(() => parseInt(localStorage.getItem(getKey('player_exp')) || '0'));
 
@@ -398,7 +399,6 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem(getKey('inventory'), JSON.stringify(inventory));
-    localStorage.setItem(getKey('coins'), coins.toString());
     localStorage.setItem(getKey('deck'), JSON.stringify(deck));
     localStorage.setItem(getKey('achievements'), JSON.stringify(achievements));
     localStorage.setItem(getKey('stars'), totalStars.toString());
@@ -438,7 +438,7 @@ function App() {
       newBadges.forEach(b => setTimeout(() => showToast(<span>{TrophyIcon} BADGE UNLOCKED: {b}!</span>, 'success'), 1000));
     }
 
-  }, [inventory, coins, deck, achievements, totalStars, stolenArtifacts, winStreak, pityCounter, playerLevel, playerExp, playerInsight, unlockedSkills, discoveredArtifacts, campaignProgress, loginStreak, lastLoginDate]);
+  }, [inventory, deck, achievements, totalStars, stolenArtifacts, winStreak, pityCounter, playerLevel, playerExp, playerInsight, unlockedSkills, discoveredArtifacts, campaignProgress, loginStreak, lastLoginDate]);
 
   const handleEquipCard = (card) => {
     playClick();
