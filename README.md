@@ -1,5 +1,7 @@
 # Nusavira: Artifacts of Nusantara
 
+> *Kumpulkan artefak legendaris Nusantara, susun taktikmu, dan selamatkan lini masa dalam RPG Gacha retro 16-bit!*
+
 **Play Live:** [https://nusavira.vercel.app/](https://nusavira.vercel.app/)
 
 **Nusavira** is a web-based, 16-bit retro Gacha RPG built with React (Vite) and Supabase. Players take on the role of a Curator, excavating legendary artifacts from Indonesian history and mythology, assembling decks, and battling corrupted historical archetypes in a turn-based combat system.
