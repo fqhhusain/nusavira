@@ -1000,8 +1000,9 @@ function App() {
         }
       } else if (card.role === 'armor') {
         let mitigation = parseInt(card.stats['Damage Mitigation']?.toString().replace('%', '') || '20');
+        mitigation = Math.min(80, mitigation); // Hard cap at 80% base to prevent permanent invincibility
         if (unlockedSkills.includes('scholar_3') && ['Natura', 'Metallum', 'Aura'].includes(element)) {
-          mitigation = Math.min(100, Math.floor(mitigation * 1.15));
+          mitigation = Math.min(90, Math.floor(mitigation * 1.15)); // Scholar allows pushing it to 90%
         }
         newState.log.push(`You brace for impact with ${card.title}.`);
         newState.activeDefense = mitigation;
