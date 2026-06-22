@@ -2,7 +2,7 @@
   {
     "id": "met-307891",
     "title": "Shoulder Cloth (Selendang)",
-    "imageUrl": "/artifacts_images_hd/met-307891.jpg",
+    "imageUrl": "/artifacts_images/met-307891.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -22,7 +22,7 @@
   {
     "id": "met-37747",
     "title": "Box for Betel Leaves",
-    "imageUrl": "/artifacts_images_hd/met-37747.jpg",
+    "imageUrl": "/artifacts_images/met-37747.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -42,7 +42,7 @@
   {
     "id": "met-37743",
     "title": "Ceremonial Object in the Shape of an Ax",
-    "imageUrl": "/artifacts_images_hd/met-37743.jpg",
+    "imageUrl": "/artifacts_images/met-37743.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -62,7 +62,7 @@
   {
     "id": "met-53861",
     "title": "Knife handle",
-    "imageUrl": "/artifacts_images_hd/met-53861.jpg",
+    "imageUrl": "/artifacts_images/met-53861.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -82,7 +82,7 @@
   {
     "id": "met-31486",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31486.jpg",
+    "imageUrl": "/artifacts_images/met-31486.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -102,7 +102,7 @@
   {
     "id": "met-31284",
     "title": "Sheath for a Kris",
-    "imageUrl": "/artifacts_images_hd/met-31284.jpg",
+    "imageUrl": "/artifacts_images/met-31284.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -122,7 +122,7 @@
   {
     "id": "met-32249",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-32249.jpg",
+    "imageUrl": "/artifacts_images/met-32249.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -142,7 +142,7 @@
   {
     "id": "met-30704",
     "title": "Spear with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-30704.jpg",
+    "imageUrl": "/artifacts_images/met-30704.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -162,7 +162,7 @@
   {
     "id": "met-58423",
     "title": "Lime Spatula with Animal Head",
-    "imageUrl": "/artifacts_images_hd/met-58423.jpg",
+    "imageUrl": "/artifacts_images/met-58423.webp",
     "role": "character",
     "element": "Metallum",
     "level": 1,
@@ -182,7 +182,7 @@
   {
     "id": "met-53047",
     "title": "Hafted Ax with Face",
-    "imageUrl": "/artifacts_images_hd/met-53047.jpg",
+    "imageUrl": "/artifacts_images/met-53047.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -202,7 +202,7 @@
   {
     "id": "met-53887",
     "title": "Pendant",
-    "imageUrl": "/artifacts_images_hd/met-53887.jpg",
+    "imageUrl": "/artifacts_images/met-53887.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -222,7 +222,7 @@
   {
     "id": "met-53060",
     "title": "Token Axes in the Shape of a Fask",
-    "imageUrl": "/artifacts_images_hd/met-53060.jpg",
+    "imageUrl": "/artifacts_images/met-53060.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -242,7 +242,7 @@
   {
     "id": "met-53036",
     "title": "Knife handle",
-    "imageUrl": "/artifacts_images_hd/met-53036.jpg",
+    "imageUrl": "/artifacts_images/met-53036.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -262,7 +262,7 @@
   {
     "id": "met-51349",
     "title": "Anthropomorphic Lime Spatula",
-    "imageUrl": "/artifacts_images_hd/met-51349.jpg",
+    "imageUrl": "/artifacts_images/met-51349.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -282,7 +282,7 @@
   {
     "id": "met-53093",
     "title": "Hafted Ax",
-    "imageUrl": "/artifacts_images_hd/met-53093.jpg",
+    "imageUrl": "/artifacts_images/met-53093.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -302,7 +302,7 @@
   {
     "id": "met-53076",
     "title": "Ax",
-    "imageUrl": "/artifacts_images_hd/met-53076.jpg",
+    "imageUrl": "/artifacts_images/met-53076.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -322,7 +322,7 @@
   {
     "id": "met-51353",
     "title": "Standing Figure Between Two Posts",
-    "imageUrl": "/artifacts_images_hd/met-51353.jpg",
+    "imageUrl": "/artifacts_images/met-51353.webp",
     "role": "character",
     "element": "Metallum",
     "level": 1,
@@ -342,7 +342,7 @@
   {
     "id": "met-53499",
     "title": "Small Drum",
-    "imageUrl": "/artifacts_images_hd/met-53499.jpg",
+    "imageUrl": "/artifacts_images/met-53499.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -362,7 +362,7 @@
   {
     "id": "met-53090",
     "title": "Hafted Ax",
-    "imageUrl": "/artifacts_images_hd/met-53090.jpg",
+    "imageUrl": "/artifacts_images/met-53090.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -382,7 +382,7 @@
   {
     "id": "met-52091",
     "title": "Hafted Ax with Bird",
-    "imageUrl": "/artifacts_images_hd/met-52091.jpg",
+    "imageUrl": "/artifacts_images/met-52091.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -402,7 +402,7 @@
   {
     "id": "met-58420",
     "title": "Lime Spatula with Animal Head",
-    "imageUrl": "/artifacts_images_hd/met-58420.jpg",
+    "imageUrl": "/artifacts_images/met-58420.webp",
     "role": "character",
     "element": "Metallum",
     "level": 1,
@@ -422,7 +422,7 @@
   {
     "id": "met-53889",
     "title": "Pendant",
-    "imageUrl": "/artifacts_images_hd/met-53889.jpg",
+    "imageUrl": "/artifacts_images/met-53889.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -442,7 +442,7 @@
   {
     "id": "met-51438",
     "title": "Bird",
-    "imageUrl": "/artifacts_images_hd/met-51438.jpg",
+    "imageUrl": "/artifacts_images/met-51438.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -462,7 +462,7 @@
   {
     "id": "met-53885",
     "title": "Pendant",
-    "imageUrl": "/artifacts_images_hd/met-53885.jpg",
+    "imageUrl": "/artifacts_images/met-53885.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -482,7 +482,7 @@
   {
     "id": "met-51325",
     "title": "Lime Vessel",
-    "imageUrl": "/artifacts_images_hd/met-51325.jpg",
+    "imageUrl": "/artifacts_images/met-51325.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -502,7 +502,7 @@
   {
     "id": "met-53073",
     "title": "Hoe-Shaped Ax",
-    "imageUrl": "/artifacts_images_hd/met-53073.jpg",
+    "imageUrl": "/artifacts_images/met-53073.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -522,7 +522,7 @@
   {
     "id": "met-53329",
     "title": "One of a Pair of Ear Pendants",
-    "imageUrl": "/artifacts_images_hd/met-53329.jpg",
+    "imageUrl": "/artifacts_images/met-53329.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -542,7 +542,7 @@
   {
     "id": "met-51346",
     "title": "Lime Spatula in the Shape of a Pipe",
-    "imageUrl": "/artifacts_images_hd/met-51346.jpg",
+    "imageUrl": "/artifacts_images/met-51346.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -562,7 +562,7 @@
   {
     "id": "met-51329",
     "title": "Lime Container in the Shape of a \"Mioko\" Drum",
-    "imageUrl": "/artifacts_images_hd/met-51329.jpg",
+    "imageUrl": "/artifacts_images/met-51329.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -582,7 +582,7 @@
   {
     "id": "met-37751",
     "title": "Lime Container with Figural Handles",
-    "imageUrl": "/artifacts_images_hd/met-37751.jpg",
+    "imageUrl": "/artifacts_images/met-37751.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -602,7 +602,7 @@
   {
     "id": "met-54289",
     "title": "Standing Warrior",
-    "imageUrl": "/artifacts_images_hd/met-54289.jpg",
+    "imageUrl": "/artifacts_images/met-54289.webp",
     "role": "character",
     "element": "Metallum",
     "level": 1,
@@ -622,7 +622,7 @@
   {
     "id": "met-37621",
     "title": "Crescent-Shaped Ax Head (Chandrasa)",
-    "imageUrl": "/artifacts_images_hd/met-37621.jpg",
+    "imageUrl": "/artifacts_images/met-37621.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -642,7 +642,7 @@
   {
     "id": "met-308251",
     "title": "Woman's Ceremonial  Skirt (Tapis)",
-    "imageUrl": "/artifacts_images_hd/met-308251.jpg",
+    "imageUrl": "/artifacts_images/met-308251.webp",
     "role": "armor",
     "element": "Aura",
     "level": 1,
@@ -662,7 +662,7 @@
   {
     "id": "met-315935",
     "title": "Man's Sarong (Kain Lepas)",
-    "imageUrl": "/artifacts_images_hd/met-315935.jpg",
+    "imageUrl": "/artifacts_images/met-315935.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -682,7 +682,7 @@
   {
     "id": "met-39426",
     "title": "Arm Band with Man's Head",
-    "imageUrl": "/artifacts_images_hd/met-39426.jpg",
+    "imageUrl": "/artifacts_images/met-39426.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -702,7 +702,7 @@
   {
     "id": "met-40123",
     "title": "Chastity Plaque",
-    "imageUrl": "/artifacts_images_hd/met-40123.jpg",
+    "imageUrl": "/artifacts_images/met-40123.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -722,7 +722,7 @@
   {
     "id": "met-40118",
     "title": "Weapon Handle with Ganesha",
-    "imageUrl": "/artifacts_images_hd/met-40118.jpg",
+    "imageUrl": "/artifacts_images/met-40118.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -742,7 +742,7 @@
   {
     "id": "met-31622",
     "title": "Dagger (Golok or Pedang) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31622.jpg",
+    "imageUrl": "/artifacts_images/met-31622.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -762,7 +762,7 @@
   {
     "id": "met-31245",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31245.jpg",
+    "imageUrl": "/artifacts_images/met-31245.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -782,7 +782,7 @@
   {
     "id": "met-31276",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31276.jpg",
+    "imageUrl": "/artifacts_images/met-31276.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -802,7 +802,7 @@
   {
     "id": "met-31672",
     "title": "Knife (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31672.jpg",
+    "imageUrl": "/artifacts_images/met-31672.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -822,7 +822,7 @@
   {
     "id": "met-31576",
     "title": "Knife (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31576.jpg",
+    "imageUrl": "/artifacts_images/met-31576.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -842,7 +842,7 @@
   {
     "id": "met-31317",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31317.jpg",
+    "imageUrl": "/artifacts_images/met-31317.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -862,7 +862,7 @@
   {
     "id": "met-38629",
     "title": "Ax",
-    "imageUrl": "/artifacts_images_hd/met-38629.jpg",
+    "imageUrl": "/artifacts_images/met-38629.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -882,7 +882,7 @@
   {
     "id": "met-50393",
     "title": "Stirrup-Shaped Ring with Oblong Bezel with Shankha",
-    "imageUrl": "/artifacts_images_hd/met-50393.jpg",
+    "imageUrl": "/artifacts_images/met-50393.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -902,7 +902,7 @@
   {
     "id": "met-31491",
     "title": "Kris with Sheath and Kingfisher Hilt",
-    "imageUrl": "/artifacts_images_hd/met-31491.jpg",
+    "imageUrl": "/artifacts_images/met-31491.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -922,7 +922,7 @@
   {
     "id": "met-31055",
     "title": "Sword with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31055.jpg",
+    "imageUrl": "/artifacts_images/met-31055.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -942,7 +942,7 @@
   {
     "id": "met-50156",
     "title": "Ring with Tortoise Motif",
-    "imageUrl": "/artifacts_images_hd/met-50156.jpg",
+    "imageUrl": "/artifacts_images/met-50156.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -962,7 +962,7 @@
   {
     "id": "met-64352",
     "title": "Cast Earring with Granulation",
-    "imageUrl": "/artifacts_images_hd/met-64352.jpg",
+    "imageUrl": "/artifacts_images/met-64352.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -982,7 +982,7 @@
   {
     "id": "met-30738",
     "title": "Spearhead",
-    "imageUrl": "/artifacts_images_hd/met-30738.jpg",
+    "imageUrl": "/artifacts_images/met-30738.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -1002,7 +1002,7 @@
   {
     "id": "met-31349",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31349.jpg",
+    "imageUrl": "/artifacts_images/met-31349.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -1022,7 +1022,7 @@
   {
     "id": "met-31341",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31341.jpg",
+    "imageUrl": "/artifacts_images/met-31341.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -1042,7 +1042,7 @@
   {
     "id": "met-64443",
     "title": "Earrings with Foliate Decoration",
-    "imageUrl": "/artifacts_images_hd/met-64443.jpg",
+    "imageUrl": "/artifacts_images/met-64443.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1062,7 +1062,7 @@
   {
     "id": "met-64426",
     "title": "Earring, Quatreform with Rubies",
-    "imageUrl": "/artifacts_images_hd/met-64426.jpg",
+    "imageUrl": "/artifacts_images/met-64426.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1082,7 +1082,7 @@
   {
     "id": "met-31319",
     "title": "Kris",
-    "imageUrl": "/artifacts_images_hd/met-31319.jpg",
+    "imageUrl": "/artifacts_images/met-31319.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -1102,7 +1102,7 @@
   {
     "id": "met-64265",
     "title": "Foliate Armband Ornament",
-    "imageUrl": "/artifacts_images_hd/met-64265.jpg",
+    "imageUrl": "/artifacts_images/met-64265.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1122,7 +1122,7 @@
   {
     "id": "met-40144",
     "title": "Two Sets of Necklace Beads in the Form of Stylized Insects",
-    "imageUrl": "/artifacts_images_hd/met-40144.jpg",
+    "imageUrl": "/artifacts_images/met-40144.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1142,7 +1142,7 @@
   {
     "id": "met-64260",
     "title": "Pair of Earrings, Rope Twist",
-    "imageUrl": "/artifacts_images_hd/met-64260.jpg",
+    "imageUrl": "/artifacts_images/met-64260.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1162,7 +1162,7 @@
   {
     "id": "met-31669",
     "title": "Knife (Bade-bade)",
-    "imageUrl": "/artifacts_images_hd/met-31669.jpg",
+    "imageUrl": "/artifacts_images/met-31669.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -1182,7 +1182,7 @@
   {
     "id": "met-64406",
     "title": "Ear ornament , Garuda, Meru",
-    "imageUrl": "/artifacts_images_hd/met-64406.jpg",
+    "imageUrl": "/artifacts_images/met-64406.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1202,7 +1202,7 @@
   {
     "id": "met-64399",
     "title": "Pair of Earrings",
-    "imageUrl": "/artifacts_images_hd/met-64399.jpg",
+    "imageUrl": "/artifacts_images/met-64399.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1222,7 +1222,7 @@
   {
     "id": "met-64236",
     "title": "Pair of Ear Ornaments with Design of Fused Discs",
-    "imageUrl": "/artifacts_images_hd/met-64236.jpg",
+    "imageUrl": "/artifacts_images/met-64236.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1242,7 +1242,7 @@
   {
     "id": "met-64215",
     "title": "Pendant, Conch, Flame and Foliate",
-    "imageUrl": "/artifacts_images_hd/met-64215.jpg",
+    "imageUrl": "/artifacts_images/met-64215.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1262,7 +1262,7 @@
   {
     "id": "met-40127",
     "title": "Ear Ornament in the form of Vishnu Riding Garuda",
-    "imageUrl": "/artifacts_images_hd/met-40127.jpg",
+    "imageUrl": "/artifacts_images/met-40127.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -1282,7 +1282,7 @@
   {
     "id": "met-64357",
     "title": "One of a Set of Four Earrings",
-    "imageUrl": "/artifacts_images_hd/met-64357.jpg",
+    "imageUrl": "/artifacts_images/met-64357.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1302,7 +1302,7 @@
   {
     "id": "met-23017",
     "title": "Kris with Sheath, the hilt representing Batara Bayu",
-    "imageUrl": "/artifacts_images_hd/met-23017.jpg",
+    "imageUrl": "/artifacts_images/met-23017.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -1322,7 +1322,7 @@
   {
     "id": "met-64394",
     "title": "Ornament in the Form of a Bud",
-    "imageUrl": "/artifacts_images_hd/met-64394.jpg",
+    "imageUrl": "/artifacts_images/met-64394.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1342,7 +1342,7 @@
   {
     "id": "met-64434",
     "title": "Earring with Foliate Decoration",
-    "imageUrl": "/artifacts_images_hd/met-64434.jpg",
+    "imageUrl": "/artifacts_images/met-64434.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1362,7 +1362,7 @@
   {
     "id": "met-64428",
     "title": "Bird-Form Earring",
-    "imageUrl": "/artifacts_images_hd/met-64428.jpg",
+    "imageUrl": "/artifacts_images/met-64428.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1382,7 +1382,7 @@
   {
     "id": "met-315451",
     "title": "Horse Bridle Ornament (Katanga Njara)",
-    "imageUrl": "/artifacts_images_hd/met-315451.jpg",
+    "imageUrl": "/artifacts_images/met-315451.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -1402,7 +1402,7 @@
   {
     "id": "met-64247",
     "title": "Pair of Ear Ornaments, Lunates",
-    "imageUrl": "/artifacts_images_hd/met-64247.jpg",
+    "imageUrl": "/artifacts_images/met-64247.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1422,7 +1422,7 @@
   {
     "id": "met-65104",
     "title": "Fragment of an Ornament",
-    "imageUrl": "/artifacts_images_hd/met-65104.jpg",
+    "imageUrl": "/artifacts_images/met-65104.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1442,7 +1442,7 @@
   {
     "id": "met-64202",
     "title": "Ear Ornament with Drop Rope Twist",
-    "imageUrl": "/artifacts_images_hd/met-64202.jpg",
+    "imageUrl": "/artifacts_images/met-64202.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1462,7 +1462,7 @@
   {
     "id": "met-64211",
     "title": "Chain with Glass Terminals",
-    "imageUrl": "/artifacts_images_hd/met-64211.jpg",
+    "imageUrl": "/artifacts_images/met-64211.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1482,7 +1482,7 @@
   {
     "id": "met-64354",
     "title": "Earring with Foliate Decoration",
-    "imageUrl": "/artifacts_images_hd/met-64354.jpg",
+    "imageUrl": "/artifacts_images/met-64354.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1502,7 +1502,7 @@
   {
     "id": "met-49950",
     "title": "Ear Clip Composed of Fused Discs",
-    "imageUrl": "/artifacts_images_hd/met-49950.jpg",
+    "imageUrl": "/artifacts_images/met-49950.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1522,7 +1522,7 @@
   {
     "id": "met-50087",
     "title": "Pair of Circular Ear Hoops",
-    "imageUrl": "/artifacts_images_hd/met-50087.jpg",
+    "imageUrl": "/artifacts_images/met-50087.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1542,7 +1542,7 @@
   {
     "id": "met-64223",
     "title": "Ear Ornament Garuda, Meru",
-    "imageUrl": "/artifacts_images_hd/met-64223.jpg",
+    "imageUrl": "/artifacts_images/met-64223.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1562,7 +1562,7 @@
   {
     "id": "met-50117",
     "title": "Pair of Tweezers",
-    "imageUrl": "/artifacts_images_hd/met-50117.jpg",
+    "imageUrl": "/artifacts_images/met-50117.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -1582,7 +1582,7 @@
   {
     "id": "met-50081",
     "title": "Earring",
-    "imageUrl": "/artifacts_images_hd/met-50081.jpg",
+    "imageUrl": "/artifacts_images/met-50081.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1602,7 +1602,7 @@
   {
     "id": "met-50112",
     "title": "Linga",
-    "imageUrl": "/artifacts_images_hd/met-50112.jpg",
+    "imageUrl": "/artifacts_images/met-50112.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -1622,7 +1622,7 @@
   {
     "id": "met-50075",
     "title": "Large Piloncito Coin",
-    "imageUrl": "/artifacts_images_hd/met-50075.jpg",
+    "imageUrl": "/artifacts_images/met-50075.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -1642,7 +1642,7 @@
   {
     "id": "met-308254",
     "title": "Woman's Ceremonial Skirt (Tapis)",
-    "imageUrl": "/artifacts_images_hd/met-308254.jpg",
+    "imageUrl": "/artifacts_images/met-308254.webp",
     "role": "armor",
     "element": "Aura",
     "level": 1,
@@ -1662,7 +1662,7 @@
   {
     "id": "met-50059",
     "title": "Braided Wire Chain with Clasp",
-    "imageUrl": "/artifacts_images_hd/met-50059.jpg",
+    "imageUrl": "/artifacts_images/met-50059.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1682,7 +1682,7 @@
   {
     "id": "met-50147",
     "title": "Ring with Lotus Motif on Bezel",
-    "imageUrl": "/artifacts_images_hd/met-50147.jpg",
+    "imageUrl": "/artifacts_images/met-50147.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1702,7 +1702,7 @@
   {
     "id": "met-64430",
     "title": "Cast Earring with Ruby",
-    "imageUrl": "/artifacts_images_hd/met-64430.jpg",
+    "imageUrl": "/artifacts_images/met-64430.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1722,7 +1722,7 @@
   {
     "id": "met-64242",
     "title": "Crowned Goose Pendant",
-    "imageUrl": "/artifacts_images_hd/met-64242.jpg",
+    "imageUrl": "/artifacts_images/met-64242.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1742,7 +1742,7 @@
   {
     "id": "met-50058",
     "title": "Braided Wire Chain with Clasp",
-    "imageUrl": "/artifacts_images_hd/met-50058.jpg",
+    "imageUrl": "/artifacts_images/met-50058.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1762,7 +1762,7 @@
   {
     "id": "met-50063",
     "title": "Braided Chain with Finials of Fruit Motifs",
-    "imageUrl": "/artifacts_images_hd/met-50063.jpg",
+    "imageUrl": "/artifacts_images/met-50063.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1782,7 +1782,7 @@
   {
     "id": "met-64218",
     "title": "Pair of Ear Ornaments, Comma and Star",
-    "imageUrl": "/artifacts_images_hd/met-64218.jpg",
+    "imageUrl": "/artifacts_images/met-64218.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1802,7 +1802,7 @@
   {
     "id": "met-50148",
     "title": "Ring with Raised Quatrefoil Design",
-    "imageUrl": "/artifacts_images_hd/met-50148.jpg",
+    "imageUrl": "/artifacts_images/met-50148.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1822,7 +1822,7 @@
   {
     "id": "met-50071",
     "title": "Ornament with Zoomorphic/Foliate Motif",
-    "imageUrl": "/artifacts_images_hd/met-50071.jpg",
+    "imageUrl": "/artifacts_images/met-50071.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1842,7 +1842,7 @@
   {
     "id": "met-50083",
     "title": "Earring",
-    "imageUrl": "/artifacts_images_hd/met-50083.jpg",
+    "imageUrl": "/artifacts_images/met-50083.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1862,7 +1862,7 @@
   {
     "id": "met-308250",
     "title": "Woman's Ceremonial Skirt (Tapis)",
-    "imageUrl": "/artifacts_images_hd/met-308250.jpg",
+    "imageUrl": "/artifacts_images/met-308250.webp",
     "role": "armor",
     "element": "Aura",
     "level": 1,
@@ -1882,7 +1882,7 @@
   {
     "id": "met-50111",
     "title": "Small Whip for Sculpture of Deity",
-    "imageUrl": "/artifacts_images_hd/met-50111.jpg",
+    "imageUrl": "/artifacts_images/met-50111.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -1902,7 +1902,7 @@
   {
     "id": "met-50403",
     "title": "Solid Cast Ring with Sri Inscription",
-    "imageUrl": "/artifacts_images_hd/met-50403.jpg",
+    "imageUrl": "/artifacts_images/met-50403.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1922,7 +1922,7 @@
   {
     "id": "met-50410",
     "title": "Ring with Bezel Created of Twisted Wire",
-    "imageUrl": "/artifacts_images_hd/met-50410.jpg",
+    "imageUrl": "/artifacts_images/met-50410.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1942,7 +1942,7 @@
   {
     "id": "met-50100",
     "title": "Circular Pendant Inscribed with \"Sri\"",
-    "imageUrl": "/artifacts_images_hd/met-50100.jpg",
+    "imageUrl": "/artifacts_images/met-50100.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1962,7 +1962,7 @@
   {
     "id": "met-50095",
     "title": "Linga Pendant",
-    "imageUrl": "/artifacts_images_hd/met-50095.jpg",
+    "imageUrl": "/artifacts_images/met-50095.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -1982,7 +1982,7 @@
   {
     "id": "met-64412",
     "title": "Engraved Ring",
-    "imageUrl": "/artifacts_images_hd/met-64412.jpg",
+    "imageUrl": "/artifacts_images/met-64412.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2002,7 +2002,7 @@
   {
     "id": "met-50093",
     "title": "Ear Ornament",
-    "imageUrl": "/artifacts_images_hd/met-50093.jpg",
+    "imageUrl": "/artifacts_images/met-50093.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2022,7 +2022,7 @@
   {
     "id": "met-50440",
     "title": "Subang Ear Plug with Central Stylized Aksara Motif",
-    "imageUrl": "/artifacts_images_hd/met-50440.jpg",
+    "imageUrl": "/artifacts_images/met-50440.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2042,7 +2042,7 @@
   {
     "id": "met-50099",
     "title": "Circular Pendant with Incised Scalloped Design",
-    "imageUrl": "/artifacts_images_hd/met-50099.jpg",
+    "imageUrl": "/artifacts_images/met-50099.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2062,7 +2062,7 @@
   {
     "id": "met-50433",
     "title": "Ring with Large Central Boss Flanked by Series of Same",
-    "imageUrl": "/artifacts_images_hd/met-50433.jpg",
+    "imageUrl": "/artifacts_images/met-50433.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2082,7 +2082,7 @@
   {
     "id": "met-50417",
     "title": "Spherical Weighted Clasp with Filigree Ornamentation",
-    "imageUrl": "/artifacts_images_hd/met-50417.jpg",
+    "imageUrl": "/artifacts_images/met-50417.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2102,7 +2102,7 @@
   {
     "id": "met-50431",
     "title": "Stirruped-Shaped Ring with Circular Bezel with Lotus",
-    "imageUrl": "/artifacts_images_hd/met-50431.jpg",
+    "imageUrl": "/artifacts_images/met-50431.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2122,7 +2122,7 @@
   {
     "id": "met-50416",
     "title": "Gold Foil incised with Standing Image of Goddess Sri",
-    "imageUrl": "/artifacts_images_hd/met-50416.jpg",
+    "imageUrl": "/artifacts_images/met-50416.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -2142,7 +2142,7 @@
   {
     "id": "met-50424",
     "title": "Pair of Ear Ornaments with Foliate Designs",
-    "imageUrl": "/artifacts_images_hd/met-50424.jpg",
+    "imageUrl": "/artifacts_images/met-50424.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2162,7 +2162,7 @@
   {
     "id": "met-50089",
     "title": "Ear Ornament of Twisted Spiral Design",
-    "imageUrl": "/artifacts_images_hd/met-50089.jpg",
+    "imageUrl": "/artifacts_images/met-50089.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2182,7 +2182,7 @@
   {
     "id": "met-64400",
     "title": "Pair of Earrings",
-    "imageUrl": "/artifacts_images_hd/met-64400.jpg",
+    "imageUrl": "/artifacts_images/met-64400.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2202,7 +2202,7 @@
   {
     "id": "met-50400",
     "title": "Ring with Floral-Shaped Bezel and Design Details",
-    "imageUrl": "/artifacts_images_hd/met-50400.jpg",
+    "imageUrl": "/artifacts_images/met-50400.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2222,7 +2222,7 @@
   {
     "id": "met-31611",
     "title": "Knife",
-    "imageUrl": "/artifacts_images_hd/met-31611.jpg",
+    "imageUrl": "/artifacts_images/met-31611.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2242,7 +2242,7 @@
   {
     "id": "met-315940",
     "title": "Sarong (Kain Lepas)",
-    "imageUrl": "/artifacts_images_hd/met-315940.jpg",
+    "imageUrl": "/artifacts_images/met-315940.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -2262,7 +2262,7 @@
   {
     "id": "met-30656",
     "title": "Spear",
-    "imageUrl": "/artifacts_images_hd/met-30656.jpg",
+    "imageUrl": "/artifacts_images/met-30656.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2282,7 +2282,7 @@
   {
     "id": "met-64234",
     "title": "Large Ring with Amethyst Round",
-    "imageUrl": "/artifacts_images_hd/met-64234.jpg",
+    "imageUrl": "/artifacts_images/met-64234.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2302,7 +2302,7 @@
   {
     "id": "met-64205",
     "title": "Silvery Ornament with Mask",
-    "imageUrl": "/artifacts_images_hd/met-64205.jpg",
+    "imageUrl": "/artifacts_images/met-64205.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -2322,7 +2322,7 @@
   {
     "id": "met-64204",
     "title": "Repousse Cover, Quatrefoil form",
-    "imageUrl": "/artifacts_images_hd/met-64204.jpg",
+    "imageUrl": "/artifacts_images/met-64204.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -2342,7 +2342,7 @@
   {
     "id": "met-64207",
     "title": "Ear Ornament, Rows of Teeth",
-    "imageUrl": "/artifacts_images_hd/met-64207.jpg",
+    "imageUrl": "/artifacts_images/met-64207.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2362,7 +2362,7 @@
   {
     "id": "met-64409",
     "title": "Ornament with Crystal",
-    "imageUrl": "/artifacts_images_hd/met-64409.jpg",
+    "imageUrl": "/artifacts_images/met-64409.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2382,7 +2382,7 @@
   {
     "id": "met-64405",
     "title": "Ear Ornament Garuda, Meru",
-    "imageUrl": "/artifacts_images_hd/met-64405.jpg",
+    "imageUrl": "/artifacts_images/met-64405.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2402,7 +2402,7 @@
   {
     "id": "met-64416",
     "title": "Engraved Ring",
-    "imageUrl": "/artifacts_images_hd/met-64416.jpg",
+    "imageUrl": "/artifacts_images/met-64416.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2422,7 +2422,7 @@
   {
     "id": "met-64258",
     "title": "Garuda with Dolphins",
-    "imageUrl": "/artifacts_images_hd/met-64258.jpg",
+    "imageUrl": "/artifacts_images/met-64258.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2442,7 +2442,7 @@
   {
     "id": "met-64254",
     "title": "Engraved Ring",
-    "imageUrl": "/artifacts_images_hd/met-64254.jpg",
+    "imageUrl": "/artifacts_images/met-64254.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2462,7 +2462,7 @@
   {
     "id": "met-65105",
     "title": "Fragment of an Ornament",
-    "imageUrl": "/artifacts_images_hd/met-65105.jpg",
+    "imageUrl": "/artifacts_images/met-65105.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2482,7 +2482,7 @@
   {
     "id": "met-65106",
     "title": "Fragment of an Ornament",
-    "imageUrl": "/artifacts_images_hd/met-65106.jpg",
+    "imageUrl": "/artifacts_images/met-65106.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2502,7 +2502,7 @@
   {
     "id": "met-65103",
     "title": "Fragment of an Ornament",
-    "imageUrl": "/artifacts_images_hd/met-65103.jpg",
+    "imageUrl": "/artifacts_images/met-65103.webp",
     "role": "accessory",
     "element": "Aura",
     "level": 1,
@@ -2522,7 +2522,7 @@
   {
     "id": "met-31316",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31316.jpg",
+    "imageUrl": "/artifacts_images/met-31316.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2542,7 +2542,7 @@
   {
     "id": "met-308249",
     "title": "Woman's Ceremonial  Skirt (Tapis)",
-    "imageUrl": "/artifacts_images_hd/met-308249.jpg",
+    "imageUrl": "/artifacts_images/met-308249.webp",
     "role": "armor",
     "element": "Aura",
     "level": 1,
@@ -2562,7 +2562,7 @@
   {
     "id": "met-72714",
     "title": "Standing Four-Armed Shiva",
-    "imageUrl": "/artifacts_images_hd/met-72714.jpg",
+    "imageUrl": "/artifacts_images/met-72714.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -2582,7 +2582,7 @@
   {
     "id": "met-72498",
     "title": "Enthroned Buddha Attended by the Bodhisattvas Avalokiteshvara and Vajrapani",
-    "imageUrl": "/artifacts_images_hd/met-72498.jpg",
+    "imageUrl": "/artifacts_images/met-72498.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -2602,7 +2602,7 @@
   {
     "id": "met-39186",
     "title": "Standing Buddha",
-    "imageUrl": "/artifacts_images_hd/met-39186.jpg",
+    "imageUrl": "/artifacts_images/met-39186.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -2622,7 +2622,7 @@
   {
     "id": "met-39021",
     "title": "The Transcendent Buddha Vairochana (?) Seated in Western Fashion",
-    "imageUrl": "/artifacts_images_hd/met-39021.jpg",
+    "imageUrl": "/artifacts_images/met-39021.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -2642,7 +2642,7 @@
   {
     "id": "met-39020",
     "title": "Seated Transcendent Buddha Vairochana",
-    "imageUrl": "/artifacts_images_hd/met-39020.jpg",
+    "imageUrl": "/artifacts_images/met-39020.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -2662,7 +2662,7 @@
   {
     "id": "met-31246",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31246.jpg",
+    "imageUrl": "/artifacts_images/met-31246.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -2682,7 +2682,7 @@
   {
     "id": "met-31248",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31248.jpg",
+    "imageUrl": "/artifacts_images/met-31248.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -2702,7 +2702,7 @@
   {
     "id": "met-31604",
     "title": "Knife",
-    "imageUrl": "/artifacts_images_hd/met-31604.jpg",
+    "imageUrl": "/artifacts_images/met-31604.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -2722,7 +2722,7 @@
   {
     "id": "met-31559",
     "title": "Knife (Golok) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31559.jpg",
+    "imageUrl": "/artifacts_images/met-31559.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -2742,7 +2742,7 @@
   {
     "id": "met-30642",
     "title": "Two Pronged Spear (Bident)",
-    "imageUrl": "/artifacts_images_hd/met-30642.jpg",
+    "imageUrl": "/artifacts_images/met-30642.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2762,7 +2762,7 @@
   {
     "id": "met-30640",
     "title": "Spear",
-    "imageUrl": "/artifacts_images_hd/met-30640.jpg",
+    "imageUrl": "/artifacts_images/met-30640.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2782,7 +2782,7 @@
   {
     "id": "met-31662",
     "title": "Knife (Korambi) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31662.jpg",
+    "imageUrl": "/artifacts_images/met-31662.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2802,7 +2802,7 @@
   {
     "id": "met-31000",
     "title": "Saber with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31000.jpg",
+    "imageUrl": "/artifacts_images/met-31000.webp",
     "role": "relic",
     "element": "Aura",
     "level": 1,
@@ -2822,7 +2822,7 @@
   {
     "id": "met-31235",
     "title": "Executioner's Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31235.jpg",
+    "imageUrl": "/artifacts_images/met-31235.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2842,7 +2842,7 @@
   {
     "id": "met-31221",
     "title": "Sword (Klewang) with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31221.jpg",
+    "imageUrl": "/artifacts_images/met-31221.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2862,7 +2862,7 @@
   {
     "id": "met-31219",
     "title": "Sword (Klewang) with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31219.jpg",
+    "imageUrl": "/artifacts_images/met-31219.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2882,7 +2882,7 @@
   {
     "id": "met-31856",
     "title": "Dagger (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31856.jpg",
+    "imageUrl": "/artifacts_images/met-31856.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2902,7 +2902,7 @@
   {
     "id": "met-31667",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31667.jpg",
+    "imageUrl": "/artifacts_images/met-31667.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2922,7 +2922,7 @@
   {
     "id": "met-31778",
     "title": "Dagger with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31778.jpg",
+    "imageUrl": "/artifacts_images/met-31778.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2942,7 +2942,7 @@
   {
     "id": "met-31326",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31326.jpg",
+    "imageUrl": "/artifacts_images/met-31326.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2962,7 +2962,7 @@
   {
     "id": "met-31375",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31375.jpg",
+    "imageUrl": "/artifacts_images/met-31375.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -2982,7 +2982,7 @@
   {
     "id": "met-31257",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31257.jpg",
+    "imageUrl": "/artifacts_images/met-31257.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -3002,7 +3002,7 @@
   {
     "id": "met-30777",
     "title": "Spear",
-    "imageUrl": "/artifacts_images_hd/met-30777.jpg",
+    "imageUrl": "/artifacts_images/met-30777.webp",
     "role": "weapon",
     "element": "Aura",
     "level": 1,
@@ -3022,7 +3022,7 @@
   {
     "id": "met-771335",
     "title": "Ceremonial Textile (Tampan)",
-    "imageUrl": "/artifacts_images_hd/met-771335.jpg",
+    "imageUrl": "/artifacts_images/met-771335.webp",
     "role": "armor",
     "element": "Natura",
     "level": 1,
@@ -3042,7 +3042,7 @@
   {
     "id": "met-85681",
     "title": "Sash",
-    "imageUrl": "/artifacts_images_hd/met-85681.jpg",
+    "imageUrl": "/artifacts_images/met-85681.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -3062,7 +3062,7 @@
   {
     "id": "met-817059",
     "title": "Tapis, ceremonial skirt with squid pattern (cumi-cumi) iconography",
-    "imageUrl": "/artifacts_images_hd/met-817059.jpg",
+    "imageUrl": "/artifacts_images/met-817059.webp",
     "role": "armor",
     "element": "Natura",
     "level": 1,
@@ -3082,7 +3082,7 @@
   {
     "id": "met-315916",
     "title": "Woman's Ceremonial Skirt (Tapis)",
-    "imageUrl": "/artifacts_images_hd/met-315916.jpg",
+    "imageUrl": "/artifacts_images/met-315916.webp",
     "role": "armor",
     "element": "Natura",
     "level": 1,
@@ -3102,7 +3102,7 @@
   {
     "id": "met-307892",
     "title": "Shoulder Cloth (Selendang)",
-    "imageUrl": "/artifacts_images_hd/met-307892.jpg",
+    "imageUrl": "/artifacts_images/met-307892.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -3122,7 +3122,7 @@
   {
     "id": "met-502064",
     "title": "Sesando",
-    "imageUrl": "/artifacts_images_hd/met-502064.jpg",
+    "imageUrl": "/artifacts_images/met-502064.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -3142,7 +3142,7 @@
   {
     "id": "met-38267",
     "title": "Head of a Buddha",
-    "imageUrl": "/artifacts_images_hd/met-38267.jpg",
+    "imageUrl": "/artifacts_images/met-38267.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3162,7 +3162,7 @@
   {
     "id": "met-38994",
     "title": "Buddha Attended by Bodhisattvas Avalokiteshvara and Maitreya",
-    "imageUrl": "/artifacts_images_hd/met-38994.jpg",
+    "imageUrl": "/artifacts_images/met-38994.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3182,7 +3182,7 @@
   {
     "id": "met-316457",
     "title": "Palepai maju (ceremonial banner)",
-    "imageUrl": "/artifacts_images_hd/met-316457.jpg",
+    "imageUrl": "/artifacts_images/met-316457.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -3202,7 +3202,7 @@
   {
     "id": "met-39044",
     "title": "Seated Devi",
-    "imageUrl": "/artifacts_images_hd/met-39044.jpg",
+    "imageUrl": "/artifacts_images/met-39044.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3222,7 +3222,7 @@
   {
     "id": "met-39154",
     "title": "Pull Toy of a Cart and Driver",
-    "imageUrl": "/artifacts_images_hd/met-39154.jpg",
+    "imageUrl": "/artifacts_images/met-39154.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3242,7 +3242,7 @@
   {
     "id": "met-37711",
     "title": "Holy-Water Vessel",
-    "imageUrl": "/artifacts_images_hd/met-37711.jpg",
+    "imageUrl": "/artifacts_images/met-37711.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3262,7 +3262,7 @@
   {
     "id": "met-39060",
     "title": "Standing Boar",
-    "imageUrl": "/artifacts_images_hd/met-39060.jpg",
+    "imageUrl": "/artifacts_images/met-39060.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3282,7 +3282,7 @@
   {
     "id": "met-39082",
     "title": "Monster-Headed Male Deity with Consort",
-    "imageUrl": "/artifacts_images_hd/met-39082.jpg",
+    "imageUrl": "/artifacts_images/met-39082.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3302,7 +3302,7 @@
   {
     "id": "met-37691",
     "title": "Hand Bell",
-    "imageUrl": "/artifacts_images_hd/met-37691.jpg",
+    "imageUrl": "/artifacts_images/met-37691.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3322,7 +3322,7 @@
   {
     "id": "met-37706",
     "title": "Decorated Lid(?)",
-    "imageUrl": "/artifacts_images_hd/met-37706.jpg",
+    "imageUrl": "/artifacts_images/met-37706.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3342,7 +3342,7 @@
   {
     "id": "met-37687",
     "title": "Hand Bell",
-    "imageUrl": "/artifacts_images_hd/met-37687.jpg",
+    "imageUrl": "/artifacts_images/met-37687.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3362,7 +3362,7 @@
   {
     "id": "met-39218",
     "title": "Seated Agastya",
-    "imageUrl": "/artifacts_images_hd/met-39218.jpg",
+    "imageUrl": "/artifacts_images/met-39218.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3382,7 +3382,7 @@
   {
     "id": "met-39072",
     "title": "Standing Boy",
-    "imageUrl": "/artifacts_images_hd/met-39072.jpg",
+    "imageUrl": "/artifacts_images/met-39072.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3402,7 +3402,7 @@
   {
     "id": "met-37418",
     "title": "Finial with a Kinnari",
-    "imageUrl": "/artifacts_images_hd/met-37418.jpg",
+    "imageUrl": "/artifacts_images/met-37418.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3422,7 +3422,7 @@
   {
     "id": "met-39071",
     "title": "Standing Boy",
-    "imageUrl": "/artifacts_images_hd/met-39071.jpg",
+    "imageUrl": "/artifacts_images/met-39071.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3442,7 +3442,7 @@
   {
     "id": "met-39058",
     "title": "Seated Esoteric Buddhist Deity",
-    "imageUrl": "/artifacts_images_hd/met-39058.jpg",
+    "imageUrl": "/artifacts_images/met-39058.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3462,7 +3462,7 @@
   {
     "id": "met-39305",
     "title": "Offering Tray (Talam)",
-    "imageUrl": "/artifacts_images_hd/met-39305.jpg",
+    "imageUrl": "/artifacts_images/met-39305.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -3482,7 +3482,7 @@
   {
     "id": "met-38997",
     "title": "Seated Buddha",
-    "imageUrl": "/artifacts_images_hd/met-38997.jpg",
+    "imageUrl": "/artifacts_images/met-38997.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3502,7 +3502,7 @@
   {
     "id": "met-39018",
     "title": "Standing Buddha",
-    "imageUrl": "/artifacts_images_hd/met-39018.jpg",
+    "imageUrl": "/artifacts_images/met-39018.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3522,7 +3522,7 @@
   {
     "id": "met-39004",
     "title": "Seated Ganesha",
-    "imageUrl": "/artifacts_images_hd/met-39004.jpg",
+    "imageUrl": "/artifacts_images/met-39004.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3542,7 +3542,7 @@
   {
     "id": "met-39065",
     "title": "Kneeling Worshipper",
-    "imageUrl": "/artifacts_images_hd/met-39065.jpg",
+    "imageUrl": "/artifacts_images/met-39065.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3562,7 +3562,7 @@
   {
     "id": "met-37608",
     "title": "Vishnu on Adisesha",
-    "imageUrl": "/artifacts_images_hd/met-37608.jpg",
+    "imageUrl": "/artifacts_images/met-37608.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3582,7 +3582,7 @@
   {
     "id": "met-39051",
     "title": "Seated Female Deity",
-    "imageUrl": "/artifacts_images_hd/met-39051.jpg",
+    "imageUrl": "/artifacts_images/met-39051.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3602,7 +3602,7 @@
   {
     "id": "met-37702",
     "title": "Naga Spout from a Holy-Water Vessel",
-    "imageUrl": "/artifacts_images_hd/met-37702.jpg",
+    "imageUrl": "/artifacts_images/met-37702.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3622,7 +3622,7 @@
   {
     "id": "met-39024",
     "title": "Seated Vairochana, the Transcendent Buddha of the Center",
-    "imageUrl": "/artifacts_images_hd/met-39024.jpg",
+    "imageUrl": "/artifacts_images/met-39024.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3642,7 +3642,7 @@
   {
     "id": "met-501374",
     "title": "Saron Panerus Slendro",
-    "imageUrl": "/artifacts_images_hd/met-501374.jpg",
+    "imageUrl": "/artifacts_images/met-501374.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3662,7 +3662,7 @@
   {
     "id": "met-39038",
     "title": "Prajnaparamita, the Buddhist Goddess of Transcendent Wisdom",
-    "imageUrl": "/artifacts_images_hd/met-39038.jpg",
+    "imageUrl": "/artifacts_images/met-39038.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3682,7 +3682,7 @@
   {
     "id": "met-37415",
     "title": "The Buddhist Guardian Mahabala",
-    "imageUrl": "/artifacts_images_hd/met-37415.jpg",
+    "imageUrl": "/artifacts_images/met-37415.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3702,7 +3702,7 @@
   {
     "id": "met-37732",
     "title": "Footed Vessel",
-    "imageUrl": "/artifacts_images_hd/met-37732.jpg",
+    "imageUrl": "/artifacts_images/met-37732.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3722,7 +3722,7 @@
   {
     "id": "met-39313",
     "title": "Seated Deity",
-    "imageUrl": "/artifacts_images_hd/met-39313.jpg",
+    "imageUrl": "/artifacts_images/met-39313.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3742,7 +3742,7 @@
   {
     "id": "met-39006",
     "title": "Seated Kubera",
-    "imageUrl": "/artifacts_images_hd/met-39006.jpg",
+    "imageUrl": "/artifacts_images/met-39006.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3762,7 +3762,7 @@
   {
     "id": "met-39055",
     "title": "Seated Bodhisattva Vajrasattva",
-    "imageUrl": "/artifacts_images_hd/met-39055.jpg",
+    "imageUrl": "/artifacts_images/met-39055.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3782,7 +3782,7 @@
   {
     "id": "met-39057",
     "title": "Seated Bodhisattva",
-    "imageUrl": "/artifacts_images_hd/met-39057.jpg",
+    "imageUrl": "/artifacts_images/met-39057.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3802,7 +3802,7 @@
   {
     "id": "met-39120",
     "title": "Standing Deity (Vishnu?)",
-    "imageUrl": "/artifacts_images_hd/met-39120.jpg",
+    "imageUrl": "/artifacts_images/met-39120.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3822,7 +3822,7 @@
   {
     "id": "met-39121",
     "title": "Holy Prabha (Halo for a Buddhist Deity)",
-    "imageUrl": "/artifacts_images_hd/met-39121.jpg",
+    "imageUrl": "/artifacts_images/met-39121.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3842,7 +3842,7 @@
   {
     "id": "met-39084",
     "title": "Naga Spout from a Holy-Water Bottle",
-    "imageUrl": "/artifacts_images_hd/met-39084.jpg",
+    "imageUrl": "/artifacts_images/met-39084.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3862,7 +3862,7 @@
   {
     "id": "met-55351",
     "title": "Head of a Buddha",
-    "imageUrl": "/artifacts_images_hd/met-55351.jpg",
+    "imageUrl": "/artifacts_images/met-55351.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -3882,7 +3882,7 @@
   {
     "id": "met-37742",
     "title": "Cannon",
-    "imageUrl": "/artifacts_images_hd/met-37742.jpg",
+    "imageUrl": "/artifacts_images/met-37742.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3902,7 +3902,7 @@
   {
     "id": "met-50378",
     "title": "Mirror with handle",
-    "imageUrl": "/artifacts_images_hd/met-50378.jpg",
+    "imageUrl": "/artifacts_images/met-50378.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3922,7 +3922,7 @@
   {
     "id": "met-37787",
     "title": "Vase",
-    "imageUrl": "/artifacts_images_hd/met-37787.jpg",
+    "imageUrl": "/artifacts_images/met-37787.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -3942,7 +3942,7 @@
   {
     "id": "met-31194",
     "title": "Sword with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31194.jpg",
+    "imageUrl": "/artifacts_images/met-31194.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -3962,7 +3962,7 @@
   {
     "id": "met-56277",
     "title": "Posthumous Portrait of a Queen as Parvati",
-    "imageUrl": "/artifacts_images_hd/met-56277.jpg",
+    "imageUrl": "/artifacts_images/met-56277.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -3982,7 +3982,7 @@
   {
     "id": "met-31249",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31249.jpg",
+    "imageUrl": "/artifacts_images/met-31249.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4002,7 +4002,7 @@
   {
     "id": "met-31366",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31366.jpg",
+    "imageUrl": "/artifacts_images/met-31366.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4022,7 +4022,7 @@
   {
     "id": "met-31285",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31285.jpg",
+    "imageUrl": "/artifacts_images/met-31285.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4042,7 +4042,7 @@
   {
     "id": "met-38272",
     "title": "Seated Preaching Buddha",
-    "imageUrl": "/artifacts_images_hd/met-38272.jpg",
+    "imageUrl": "/artifacts_images/met-38272.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -4062,7 +4062,7 @@
   {
     "id": "met-309556",
     "title": "Sarong (Kain Panjang)",
-    "imageUrl": "/artifacts_images_hd/met-309556.jpg",
+    "imageUrl": "/artifacts_images/met-309556.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -4082,7 +4082,7 @@
   {
     "id": "met-43216",
     "title": "Fragment from the Top of a Pillar",
-    "imageUrl": "/artifacts_images_hd/met-43216.jpg",
+    "imageUrl": "/artifacts_images/met-43216.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -4102,7 +4102,7 @@
   {
     "id": "met-31228",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31228.jpg",
+    "imageUrl": "/artifacts_images/met-31228.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4122,7 +4122,7 @@
   {
     "id": "met-39411",
     "title": "Halberd Head with Naga and Blade",
-    "imageUrl": "/artifacts_images_hd/met-39411.jpg",
+    "imageUrl": "/artifacts_images/met-39411.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4142,7 +4142,7 @@
   {
     "id": "met-31654",
     "title": "Pair of Knives with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31654.jpg",
+    "imageUrl": "/artifacts_images/met-31654.webp",
     "role": "relic",
     "element": "Metallum",
     "level": 1,
@@ -4162,7 +4162,7 @@
   {
     "id": "met-39604",
     "title": "Priest's Offering Tray",
-    "imageUrl": "/artifacts_images_hd/met-39604.jpg",
+    "imageUrl": "/artifacts_images/met-39604.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -4182,7 +4182,7 @@
   {
     "id": "met-38178",
     "title": "Seated Four-Armed Ganesha",
-    "imageUrl": "/artifacts_images_hd/met-38178.jpg",
+    "imageUrl": "/artifacts_images/met-38178.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -4202,7 +4202,7 @@
   {
     "id": "met-31068",
     "title": "Saber",
-    "imageUrl": "/artifacts_images_hd/met-31068.jpg",
+    "imageUrl": "/artifacts_images/met-31068.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -4222,7 +4222,7 @@
   {
     "id": "met-31379",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31379.jpg",
+    "imageUrl": "/artifacts_images/met-31379.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4242,7 +4242,7 @@
   {
     "id": "met-31363",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31363.jpg",
+    "imageUrl": "/artifacts_images/met-31363.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4262,7 +4262,7 @@
   {
     "id": "met-307898",
     "title": "Sarong (Kain Lepas-Dobo)",
-    "imageUrl": "/artifacts_images_hd/met-307898.jpg",
+    "imageUrl": "/artifacts_images/met-307898.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -4282,7 +4282,7 @@
   {
     "id": "met-31275",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31275.jpg",
+    "imageUrl": "/artifacts_images/met-31275.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4302,7 +4302,7 @@
   {
     "id": "met-31367",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31367.jpg",
+    "imageUrl": "/artifacts_images/met-31367.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4322,7 +4322,7 @@
   {
     "id": "met-31781",
     "title": "Shield (<i>Peurise tuju bintang</i>, \"seven star shield\")",
-    "imageUrl": "/artifacts_images_hd/met-31781.jpg",
+    "imageUrl": "/artifacts_images/met-31781.webp",
     "role": "armor",
     "element": "Metallum",
     "level": 1,
@@ -4342,7 +4342,7 @@
   {
     "id": "met-31487",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31487.jpg",
+    "imageUrl": "/artifacts_images/met-31487.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4362,7 +4362,7 @@
   {
     "id": "met-31388",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31388.jpg",
+    "imageUrl": "/artifacts_images/met-31388.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4382,7 +4382,7 @@
   {
     "id": "met-38291",
     "title": "Seated Female Goddess",
-    "imageUrl": "/artifacts_images_hd/met-38291.jpg",
+    "imageUrl": "/artifacts_images/met-38291.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -4402,7 +4402,7 @@
   {
     "id": "met-308005",
     "title": "Sarong (Kain Lepas)",
-    "imageUrl": "/artifacts_images_hd/met-308005.jpg",
+    "imageUrl": "/artifacts_images/met-308005.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -4422,7 +4422,7 @@
   {
     "id": "met-501375",
     "title": "Tube Zither",
-    "imageUrl": "/artifacts_images_hd/met-501375.jpg",
+    "imageUrl": "/artifacts_images/met-501375.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -4462,7 +4462,7 @@
   {
     "id": "met-31218",
     "title": "Sword with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31218.jpg",
+    "imageUrl": "/artifacts_images/met-31218.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4482,7 +4482,7 @@
   {
     "id": "met-31229",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31229.jpg",
+    "imageUrl": "/artifacts_images/met-31229.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4502,7 +4502,7 @@
   {
     "id": "met-31211",
     "title": "Executioner's Sword",
-    "imageUrl": "/artifacts_images_hd/met-31211.jpg",
+    "imageUrl": "/artifacts_images/met-31211.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4522,7 +4522,7 @@
   {
     "id": "met-31253",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31253.jpg",
+    "imageUrl": "/artifacts_images/met-31253.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4542,7 +4542,7 @@
   {
     "id": "met-31220",
     "title": "Sword with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31220.jpg",
+    "imageUrl": "/artifacts_images/met-31220.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4562,7 +4562,7 @@
   {
     "id": "met-31247",
     "title": "Kris",
-    "imageUrl": "/artifacts_images_hd/met-31247.jpg",
+    "imageUrl": "/artifacts_images/met-31247.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4582,7 +4582,7 @@
   {
     "id": "met-31250",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31250.jpg",
+    "imageUrl": "/artifacts_images/met-31250.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4602,7 +4602,7 @@
   {
     "id": "met-31214",
     "title": "Sword with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31214.jpg",
+    "imageUrl": "/artifacts_images/met-31214.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4622,7 +4622,7 @@
   {
     "id": "met-31216",
     "title": "Sword with Scabbard",
-    "imageUrl": "/artifacts_images_hd/met-31216.jpg",
+    "imageUrl": "/artifacts_images/met-31216.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4642,7 +4642,7 @@
   {
     "id": "met-31252",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31252.jpg",
+    "imageUrl": "/artifacts_images/met-31252.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4662,7 +4662,7 @@
   {
     "id": "met-31261",
     "title": "Kris",
-    "imageUrl": "/artifacts_images_hd/met-31261.jpg",
+    "imageUrl": "/artifacts_images/met-31261.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4682,7 +4682,7 @@
   {
     "id": "met-31295",
     "title": "Blade (Kudi tranchang)",
-    "imageUrl": "/artifacts_images_hd/met-31295.jpg",
+    "imageUrl": "/artifacts_images/met-31295.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4702,7 +4702,7 @@
   {
     "id": "met-31262",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31262.jpg",
+    "imageUrl": "/artifacts_images/met-31262.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4722,7 +4722,7 @@
   {
     "id": "met-31274",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31274.jpg",
+    "imageUrl": "/artifacts_images/met-31274.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4742,7 +4742,7 @@
   {
     "id": "met-31287",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31287.jpg",
+    "imageUrl": "/artifacts_images/met-31287.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4762,7 +4762,7 @@
   {
     "id": "met-31859",
     "title": "Dagger (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31859.jpg",
+    "imageUrl": "/artifacts_images/met-31859.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4782,7 +4782,7 @@
   {
     "id": "met-31860",
     "title": "Moulded Single-Edged Curved Knife (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31860.jpg",
+    "imageUrl": "/artifacts_images/met-31860.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4802,7 +4802,7 @@
   {
     "id": "met-31647",
     "title": "Knife (Korambi) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31647.jpg",
+    "imageUrl": "/artifacts_images/met-31647.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4822,7 +4822,7 @@
   {
     "id": "met-31663",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31663.jpg",
+    "imageUrl": "/artifacts_images/met-31663.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4842,7 +4842,7 @@
   {
     "id": "met-31673",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31673.jpg",
+    "imageUrl": "/artifacts_images/met-31673.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4862,7 +4862,7 @@
   {
     "id": "met-31661",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31661.jpg",
+    "imageUrl": "/artifacts_images/met-31661.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4882,7 +4882,7 @@
   {
     "id": "met-31665",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31665.jpg",
+    "imageUrl": "/artifacts_images/met-31665.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4902,7 +4902,7 @@
   {
     "id": "met-31684",
     "title": "Knife (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31684.jpg",
+    "imageUrl": "/artifacts_images/met-31684.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4922,7 +4922,7 @@
   {
     "id": "met-31670",
     "title": "Knife (Bade-bade)",
-    "imageUrl": "/artifacts_images_hd/met-31670.jpg",
+    "imageUrl": "/artifacts_images/met-31670.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4942,7 +4942,7 @@
   {
     "id": "met-31671",
     "title": "Knife (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31671.jpg",
+    "imageUrl": "/artifacts_images/met-31671.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -4962,7 +4962,7 @@
   {
     "id": "met-31659",
     "title": "Knife (Korambi) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31659.jpg",
+    "imageUrl": "/artifacts_images/met-31659.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -4982,7 +4982,7 @@
   {
     "id": "met-31664",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31664.jpg",
+    "imageUrl": "/artifacts_images/met-31664.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5002,7 +5002,7 @@
   {
     "id": "met-31762",
     "title": "Knife (Sekin) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31762.jpg",
+    "imageUrl": "/artifacts_images/met-31762.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5022,7 +5022,7 @@
   {
     "id": "met-31600",
     "title": "Knife (Wedong) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31600.jpg",
+    "imageUrl": "/artifacts_images/met-31600.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5042,7 +5042,7 @@
   {
     "id": "met-31641",
     "title": "Knife (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31641.jpg",
+    "imageUrl": "/artifacts_images/met-31641.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5062,7 +5062,7 @@
   {
     "id": "met-31779",
     "title": "Court Knife (Wedong) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31779.jpg",
+    "imageUrl": "/artifacts_images/met-31779.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5082,7 +5082,7 @@
   {
     "id": "met-31668",
     "title": "Dagger with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31668.jpg",
+    "imageUrl": "/artifacts_images/met-31668.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5102,7 +5102,7 @@
   {
     "id": "met-31655",
     "title": "Knife (Bade-bade) with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31655.jpg",
+    "imageUrl": "/artifacts_images/met-31655.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5122,7 +5122,7 @@
   {
     "id": "met-31660",
     "title": "Knife (Korambi)",
-    "imageUrl": "/artifacts_images_hd/met-31660.jpg",
+    "imageUrl": "/artifacts_images/met-31660.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5142,7 +5142,7 @@
   {
     "id": "met-31288",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31288.jpg",
+    "imageUrl": "/artifacts_images/met-31288.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5162,7 +5162,7 @@
   {
     "id": "met-31289",
     "title": "Kris Stand",
-    "imageUrl": "/artifacts_images_hd/met-31289.jpg",
+    "imageUrl": "/artifacts_images/met-31289.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5182,7 +5182,7 @@
   {
     "id": "met-31305",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31305.jpg",
+    "imageUrl": "/artifacts_images/met-31305.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5202,7 +5202,7 @@
   {
     "id": "met-31327",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31327.jpg",
+    "imageUrl": "/artifacts_images/met-31327.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5222,7 +5222,7 @@
   {
     "id": "met-31352",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31352.jpg",
+    "imageUrl": "/artifacts_images/met-31352.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5242,7 +5242,7 @@
   {
     "id": "met-31308",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31308.jpg",
+    "imageUrl": "/artifacts_images/met-31308.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5262,7 +5262,7 @@
   {
     "id": "met-31464",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31464.jpg",
+    "imageUrl": "/artifacts_images/met-31464.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5282,7 +5282,7 @@
   {
     "id": "met-31385",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31385.jpg",
+    "imageUrl": "/artifacts_images/met-31385.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5302,7 +5302,7 @@
   {
     "id": "met-31391",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31391.jpg",
+    "imageUrl": "/artifacts_images/met-31391.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5322,7 +5322,7 @@
   {
     "id": "met-31395",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31395.jpg",
+    "imageUrl": "/artifacts_images/met-31395.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5342,7 +5342,7 @@
   {
     "id": "met-31404",
     "title": "Hunting Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31404.jpg",
+    "imageUrl": "/artifacts_images/met-31404.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5362,7 +5362,7 @@
   {
     "id": "met-31387",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31387.jpg",
+    "imageUrl": "/artifacts_images/met-31387.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5382,7 +5382,7 @@
   {
     "id": "met-31356",
     "title": "Kris Hilt",
-    "imageUrl": "/artifacts_images_hd/met-31356.jpg",
+    "imageUrl": "/artifacts_images/met-31356.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5402,7 +5402,7 @@
   {
     "id": "met-31478",
     "title": "Knife with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31478.jpg",
+    "imageUrl": "/artifacts_images/met-31478.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5422,7 +5422,7 @@
   {
     "id": "met-31396",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31396.jpg",
+    "imageUrl": "/artifacts_images/met-31396.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5442,7 +5442,7 @@
   {
     "id": "met-315938",
     "title": "Shroud (Sekomandi)",
-    "imageUrl": "/artifacts_images_hd/met-315938.jpg",
+    "imageUrl": "/artifacts_images/met-315938.webp",
     "role": "armor",
     "element": "Natura",
     "level": 1,
@@ -5462,7 +5462,7 @@
   {
     "id": "met-44643",
     "title": "Antefix",
-    "imageUrl": "/artifacts_images_hd/met-44643.jpg",
+    "imageUrl": "/artifacts_images/met-44643.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -5482,7 +5482,7 @@
   {
     "id": "met-44642",
     "title": "Antefix",
-    "imageUrl": "/artifacts_images_hd/met-44642.jpg",
+    "imageUrl": "/artifacts_images/met-44642.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -5502,7 +5502,7 @@
   {
     "id": "met-38482",
     "title": "Piggy Bank",
-    "imageUrl": "/artifacts_images_hd/met-38482.jpg",
+    "imageUrl": "/artifacts_images/met-38482.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -5522,7 +5522,7 @@
   {
     "id": "met-38292",
     "title": "Antefix with Head of a Buddha",
-    "imageUrl": "/artifacts_images_hd/met-38292.jpg",
+    "imageUrl": "/artifacts_images/met-38292.webp",
     "role": "character",
     "element": "Aura",
     "level": 1,
@@ -5542,7 +5542,7 @@
   {
     "id": "met-37542",
     "title": "Antefix",
-    "imageUrl": "/artifacts_images_hd/met-37542.jpg",
+    "imageUrl": "/artifacts_images/met-37542.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -5562,7 +5562,7 @@
   {
     "id": "met-38914",
     "title": "Fragment of a Dragon Head",
-    "imageUrl": "/artifacts_images_hd/met-38914.jpg",
+    "imageUrl": "/artifacts_images/met-38914.webp",
     "role": "character",
     "element": "Natura",
     "level": 1,
@@ -5582,7 +5582,7 @@
   {
     "id": "met-30657",
     "title": "Spear",
-    "imageUrl": "/artifacts_images_hd/met-30657.jpg",
+    "imageUrl": "/artifacts_images/met-30657.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5602,7 +5602,7 @@
   {
     "id": "met-30658",
     "title": "Spear",
-    "imageUrl": "/artifacts_images_hd/met-30658.jpg",
+    "imageUrl": "/artifacts_images/met-30658.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5622,7 +5622,7 @@
   {
     "id": "met-30645",
     "title": "Spear with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-30645.jpg",
+    "imageUrl": "/artifacts_images/met-30645.webp",
     "role": "weapon",
     "element": "Natura",
     "level": 1,
@@ -5642,7 +5642,7 @@
   {
     "id": "met-30644",
     "title": "Spear with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-30644.jpg",
+    "imageUrl": "/artifacts_images/met-30644.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5662,7 +5662,7 @@
   {
     "id": "met-30781",
     "title": "Spear",
-    "imageUrl": "/artifacts_images_hd/met-30781.jpg",
+    "imageUrl": "/artifacts_images/met-30781.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5682,7 +5682,7 @@
   {
     "id": "met-30782",
     "title": "Spear",
-    "imageUrl": "/artifacts_images_hd/met-30782.jpg",
+    "imageUrl": "/artifacts_images/met-30782.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5702,7 +5702,7 @@
   {
     "id": "met-30841",
     "title": "Ancus Head",
-    "imageUrl": "/artifacts_images_hd/met-30841.jpg",
+    "imageUrl": "/artifacts_images/met-30841.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5722,7 +5722,7 @@
   {
     "id": "met-715082",
     "title": "Offering tray (talam)",
-    "imageUrl": "/artifacts_images_hd/met-715082.jpg",
+    "imageUrl": "/artifacts_images/met-715082.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -5742,7 +5742,7 @@
   {
     "id": "met-715081",
     "title": "Offering tray (talam)",
-    "imageUrl": "/artifacts_images_hd/met-715081.jpg",
+    "imageUrl": "/artifacts_images/met-715081.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -5762,7 +5762,7 @@
   {
     "id": "met-651331",
     "title": "Maa cloth",
-    "imageUrl": "/artifacts_images_hd/met-651331.jpg",
+    "imageUrl": "/artifacts_images/met-651331.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -5782,7 +5782,7 @@
   {
     "id": "met-715079",
     "title": "Offering tray (talam)",
-    "imageUrl": "/artifacts_images_hd/met-715079.jpg",
+    "imageUrl": "/artifacts_images/met-715079.webp",
     "role": "accessory",
     "element": "Metallum",
     "level": 1,
@@ -5802,7 +5802,7 @@
   {
     "id": "met-307810",
     "title": "Panel Fragment",
-    "imageUrl": "/artifacts_images_hd/met-307810.jpg",
+    "imageUrl": "/artifacts_images/met-307810.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
@@ -5822,7 +5822,7 @@
   {
     "id": "met-31347",
     "title": "Kris with Sheath",
-    "imageUrl": "/artifacts_images_hd/met-31347.jpg",
+    "imageUrl": "/artifacts_images/met-31347.webp",
     "role": "weapon",
     "element": "Metallum",
     "level": 1,
@@ -5842,7 +5842,7 @@
   {
     "id": "met-53162",
     "title": "Tobatsu Bishamonten",
-    "imageUrl": "/artifacts_images_hd/met-53162.jpg",
+    "imageUrl": "/artifacts_images/met-53162.webp",
     "role": "relic",
     "element": "Natura",
     "level": 1,
