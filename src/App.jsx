@@ -193,7 +193,8 @@ function App() {
   // Campaign & Guide State
   const [campaignProgress, setCampaignProgress] = useState(() => parseInt(localStorage.getItem(getKey('campaign_progress')) || '0'));
   const [showGuide, setShowGuide] = useState(false);
-  const [guideDialogue, setGuideDialogue] = useState("Welcome to the Museum! How can I assist you today?");
+  const [guideDialogue, setGuideDialogue] = useState("Greetings, Curator! I am Aria, your guide to The Museum. What do you wish to know?");
+  const [guideCategory, setGuideCategory] = useState(null);
 
   // Diminishing Returns Reset Logic
   useEffect(() => {
@@ -2521,22 +2522,52 @@ function App() {
   const renderAriaGuide = () => {
     if (!showGuide) return null;
 
+    const toggleCategory = (cat) => {
+      setGuideCategory(guideCategory === cat ? null : cat);
+      playClick();
+    };
+
     return (
-      <div className="guide-overlay" onClick={() => setShowGuide(false)}>
+      <div className="guide-overlay" onClick={() => { setShowGuide(false); setGuideCategory(null); }}>
         <div className="guide-character" onClick={(e) => e.stopPropagation()}>
           <img src="/aria.png" alt="Aria" />
         </div>
         <div className="dialogue-box panel-impeccable" onClick={(e) => e.stopPropagation()} style={{ background: 'rgba(26, 17, 15, 0.95)', borderColor: '#d97706' }}>
           <div className="dialogue-name">Aria</div>
           <div className="dialogue-text">{guideDialogue}</div>
-          <div className="dialogue-options">
-            <button onClick={() => setGuideDialogue("The Museum is an infinite repository of history. Evil forces from The Void stole its artifacts, and it's your job to reclaim them by fighting their corrupted guardians!")}>What is The Museum?</button>
-            <button onClick={() => setGuideDialogue("Combat is highly strategic! Metallum deals heavy critical bursts, Natura drains life, Thermal blinds enemies, Ethereal allows dodging, and Aura can stun them entirely!")}>How does Combat work?</button>
-            <button onClick={() => setGuideDialogue("You can pull new cards in the Excavation area! Don't forget to equip your best cards in The Vault before entering the Campaign or Arena.")}>How do I get stronger?</button>
-            <button onClick={() => setGuideDialogue("Card stats are unique! 'Lethality' is your Attack Damage, and 'Critical Edge' is your Crit Chance. For HP, it's calculated from your Character's 'Cultural Impact' and 'Authenticity' combined!")}>How do I read card stats?</button>
-            <button onClick={() => setGuideDialogue("Equip 3 or more artifacts of the same Element to unlock powerful Synergy Set Bonuses! Natura provides Regrowth healing, Metallum grants 300% Crit Executioner damage, and Aura reflects 25% enemy damage!")}>How do Set Bonuses work?</button>
-            <button onClick={() => setGuideDialogue("Cards have a Max Level of 30! If you pull a duplicate of a card that is already at Max Level, you will receive 5 Insight points instead!")}>What happens to duplicates?</button>
-            <button onClick={() => { playClick(); setShowGuide(false); }}>Close</button>
+          <div className="dialogue-options" style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+            
+            <button className="accordion-btn" onClick={() => toggleCategory('basics')} style={{ background: guideCategory === 'basics' ? 'var(--primary)' : 'var(--surface-color)', color: guideCategory === 'basics' ? '#000' : 'var(--primary)', border: '2px solid var(--primary)', padding: '10px', textAlign: 'left', fontWeight: 'bold' }}>
+              The Basics {guideCategory === 'basics' ? '[-]' : '[+]'}
+            </button>
+            {guideCategory === 'basics' && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '15px' }}>
+                <button onClick={() => { playClick(); setGuideDialogue("The Museum is an infinite repository of history. Evil forces from The Void stole its artifacts, and it's your job to reclaim them by fighting their corrupted guardians!"); }}>What is The Museum?</button>
+                <button onClick={() => { playClick(); setGuideDialogue("You can pull new cards in the Excavation area! Don't forget to equip your best cards in The Vault before entering the Campaign or Arena."); }}>How do I get stronger?</button>
+              </div>
+            )}
+
+            <button className="accordion-btn" onClick={() => toggleCategory('combat')} style={{ background: guideCategory === 'combat' ? '#dc2626' : 'var(--surface-color)', color: guideCategory === 'combat' ? '#fff' : '#ef4444', border: '2px solid #dc2626', padding: '10px', textAlign: 'left', fontWeight: 'bold' }}>
+              Combat System {guideCategory === 'combat' ? '[-]' : '[+]'}
+            </button>
+            {guideCategory === 'combat' && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '15px' }}>
+                <button onClick={() => { playClick(); setGuideDialogue("Combat is highly strategic! Metallum deals heavy critical bursts, Natura drains life, Thermal blinds enemies, Ethereal allows dodging, and Aura can stun them entirely!"); }}>How does Combat work?</button>
+                <button onClick={() => { playClick(); setGuideDialogue("Card stats are unique! 'Lethality' is your Attack Damage, and 'Critical Edge' is your Crit Chance. For HP, it's calculated from your Character's 'Cultural Impact' and 'Authenticity' combined!"); }}>How do I read card stats?</button>
+              </div>
+            )}
+
+            <button className="accordion-btn" onClick={() => toggleCategory('mechanics')} style={{ background: guideCategory === 'mechanics' ? '#8b5cf6' : 'var(--surface-color)', color: guideCategory === 'mechanics' ? '#fff' : '#a855f7', border: '2px solid #8b5cf6', padding: '10px', textAlign: 'left', fontWeight: 'bold' }}>
+              Advanced Mechanics {guideCategory === 'mechanics' ? '[-]' : '[+]'}
+            </button>
+            {guideCategory === 'mechanics' && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '15px' }}>
+                <button onClick={() => { playClick(); setGuideDialogue("Equip 3 or more artifacts of the same Element to unlock powerful Synergy Set Bonuses! Natura provides Regrowth healing, Metallum grants 300% Crit Executioner damage, and Aura reflects 25% enemy damage!"); }}>How do Set Bonuses work?</button>
+                <button onClick={() => { playClick(); setGuideDialogue("Cards have a Max Level of 30! If you pull a duplicate of a card that is already at Max Level, you will receive 5 Insight points instead!"); }}>What happens to duplicates?</button>
+              </div>
+            )}
+
+            <button onClick={() => { playClick(); setShowGuide(false); setGuideCategory(null); }} style={{ marginTop: '10px' }}>Close</button>
           </div>
         </div>
       </div>
