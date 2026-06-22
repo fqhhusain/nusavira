@@ -78,4 +78,8 @@ All pixel-art assets, character portraits, and UI elements were generated to cap
 ---
 *Created with passion. Protect the history, build your legacy.*
 
-**Support the Creator:** [Saweria](https://saweria.co/dailycisea)
+**Credits:** 
+- Developer NRP: **5027231023**
+
+**Contact / Support:** 
+- [Saweria](https://saweria.co/dailycisea)
