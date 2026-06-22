@@ -61,7 +61,6 @@
 ## Roadmap / TODO
 
 - [ ] Publish the game on itch.io as an HTML5 web game.
-- [ ] Replace remaining placeholder emoticons with custom pixel art.
 
 ## Database Schema (Supabase)
 
