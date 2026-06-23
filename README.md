@@ -1,4 +1,4 @@
-# Nusavira: Artifacts of Nusantara
+# Nusavira: Clash of Artifacts
 
 > *Kumpulkan artefak legendaris Nusantara, susun taktikmu, dan selamatkan lini masa dalam RPG Gacha retro 16-bit!*
 
